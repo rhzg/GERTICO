@@ -1,0 +1,15 @@
+# folgende Umgebungsvariablen muessen gesetzt sein:
+# $GERTICO
+# $ACE_ROOT
+# $TAO_ROOT
+# $XERCESCROOT
+
+CXX = g++
+DEBUG = -g
+FEDTIMELIB = libFedtimeDouble.a
+MACHINE = -march=pentiumpro
+OPTIMIZE = -O3
+LDFLAGS = $(DEBUG)
+#FLAGS = $(LDFLAGS) $(DEBUG) $(OPTIMIZE) -Wall -pg
+FLAGS = $(LDFLAGS) -Wall -W -DRTI_USES_STD_FSTREAM -pipe -fPIC -D_REENTRANT -DGalDebug
+#GeRTIrootContext = \"GeRTI\"

@@ -1,0 +1,2345 @@
+/*******************************************************************************
+**
+** Copyright (c) Fraunhofer IOSB
+** All rights reserved.
+**
+** GeRtiFactory.idl
+**
+*******************************************************************************/
+
+#ifndef __GERTIFACTORY_DEFINED
+#define __GERTIFACTORY_DEFINED
+
+module GeRtiFactory {
+
+	exception AsynchronousDeliveryAlreadyDisabled {
+		wstring reason;
+	};
+
+	exception AsynchronousDeliveryAlreadyEnabled {
+		wstring reason;
+	};
+
+	exception AttributeAcquisitionWasNotCanceled {
+		wstring reason;
+	};
+
+	exception AttributeAcquisitionWasNotRequested {
+		wstring reason;
+	};
+
+	exception AttributeAlreadyBeingAcquired {
+		wstring reason;
+	};
+
+	exception AttributeAlreadyBeingDivested {
+		wstring reason;
+	};
+
+	exception AttributeAlreadyOwned {
+		wstring reason;
+	};
+
+	exception AttributeDivestitureWasNotRequested {
+		wstring reason;
+	};
+
+	exception AttributeNotDefined {
+		wstring reason;
+	};
+
+	exception AttributeNotKnown {
+		wstring reason;
+	};
+
+	exception AttributeNotOwned {
+		wstring reason;
+	};
+
+	exception AttributeNotPublished {
+		wstring reason;
+	};
+
+	exception AttributeRelevanceAdvisorySwitchIsOff {
+		wstring reason;
+	};
+
+	exception AttributeRelevanceAdvisorySwitchIsOn {
+		wstring reason;
+	};
+
+	exception AttributeScopeAdvisorySwitchIsOff {
+		wstring reason;
+	};
+
+	exception AttributeScopeAdvisorySwitchIsOn {
+		wstring reason;
+	};
+
+	exception CouldNotOpenFED {
+		wstring reason;
+	};
+
+	exception CouldNotRestore {
+		wstring reason;
+	};
+
+	exception ConcurrentAccessAttempted {
+		wstring reason;
+	};
+
+	exception CouldNotDiscover {
+		wstring reason;
+	};
+
+	exception DeletePrivilegeNotHeld {
+		wstring reason;
+	};
+
+	exception DimensionNotDefined {
+		wstring reason;
+	};
+
+	exception EnableTimeConstrainedPending {
+		wstring reason;
+	};
+
+	exception EnableTimeRegulationPending {
+		wstring reason;
+	};
+
+	exception ErrorReadingFED {
+		wstring reason;
+	};
+
+	exception EventHubAlreadyExists {
+		wstring reason;
+	};
+
+	exception EventNotKnown {
+		wstring reason;
+	};
+
+	exception FederateAlreadyExecutionMember {
+		wstring reason;
+	};
+
+	exception FederateNotSubscribed {
+		wstring reason;
+	};
+
+	exception FederationExecutionDoesNotExist {
+		wstring reason;
+	};
+
+	exception FederationTimeAlreadyPassed {
+		wstring reason;
+	};
+
+	exception FederateInternalError {
+		wstring reason;
+	};
+
+	exception FederateLoggingServiceCalls {
+		wstring reason;
+	};
+
+	exception FederateNotExecutionMember {
+		wstring reason;
+	};
+
+	exception FederateOwnsAttributes {
+		wstring reason;
+	};
+
+	exception FederatesCurrentlyJoined {
+		wstring reason;
+	};
+
+	exception FederationExecutionAlreadyExists {
+		wstring reason;
+	};
+
+	exception FederateServiceInvocationsAreBeingReportedViaMOM {
+		wstring reason;
+	};
+
+	exception FederateWasNotAskedToReleaseAttribute {
+		wstring reason;
+	};
+
+	exception FederateUnableToUseTime {
+		wstring reason;
+	};
+
+	exception IllegalName {
+		wstring reason;
+	};
+
+	exception InTimeAdvancingState {
+		wstring reason;
+	};
+
+	exception InteractionClassNotDefined {
+		wstring reason;
+	};
+
+	exception InteractionClassNotPublished {
+		wstring reason;
+	};
+
+	exception InteractionClassNotSubscribed {
+		wstring reason;
+	};
+
+	exception InteractionParameterNotDefined {
+		wstring reason;
+	};
+
+	exception InteractionRelevanceAdvisorySwitchIsOff {
+		wstring reason;
+	};
+
+	exception InteractionRelevanceAdvisorySwitchIsOn {
+		wstring reason;
+	};
+
+	exception InvalidExtents {
+		wstring reason;
+	};
+
+	exception InvalidFederationTime {
+		wstring reason;
+	};
+
+	exception InvalidLogicalTimeInterval {
+		wstring reason;
+	};
+
+	exception InvalidLookahead {
+		wstring reason;
+	};
+
+	exception InvalidOrderingHandle {
+		wstring reason;
+	};
+
+	exception InvalidRangeBound {
+		wstring reason;
+	};
+
+	exception InvalidRegionContext {
+		wstring reason;
+	};
+
+	exception InvalidResignAction {
+		wstring reason;
+	};
+
+	exception InvalidRetractionHandle {
+		wstring reason;
+	};
+
+	exception InvalidTransportationHandle {
+		wstring reason;
+	};
+
+	exception JoinedFederateIsNotInTimeAdvancingState {
+		wstring reason;
+	};
+
+	exception MemoryExhausted {
+		wstring reason;
+	};
+
+	exception NameNotFound {
+		wstring reason;
+	};
+
+	exception NoAcquisitionPending {
+		wstring reason;
+	};
+
+	exception NoRequestToEnableTimeConstrainedWasPending {
+		wstring reason;
+	};
+
+	exception NoRequestToEnableTimeRegulationWasPending {
+		wstring reason;
+	};
+
+	exception ObjectAlreadyRegistered {
+		wstring reason;
+	};
+
+	exception ObjectClassNotDefined {
+		wstring reason;
+	};
+
+	exception ObjectClassNotKnown {
+		wstring reason;
+	};
+
+	exception ObjectClassNotPublished {
+		wstring reason;
+	};
+
+	exception ObjectClassNotSubscribed {
+		wstring reason;
+	};
+
+	exception ObjectClassRelevanceAdvisorySwitchIsOff {
+		wstring reason;
+	};
+
+	exception ObjectClassRelevanceAdvisorySwitchIsOn {
+		wstring reason;
+	};
+
+	exception ObjectInstanceNameInUse {
+		wstring reason;
+	};
+
+	exception ObjectInstanceNameNotReserved {
+		wstring reason;
+	};
+
+	exception ObjectNotKnown {
+		wstring reason;
+	};
+
+	exception OwnershipAcquisitionPending {
+		wstring reason;
+	};
+
+	exception RTIinternalError {
+		wstring reason;
+	};
+
+	exception RegionDoesNotContainSpecifiedDimension {
+		wstring reason;
+	};
+
+	exception RegionInUse {
+		wstring reason;
+	};
+
+	exception RegionNotCreatedByThisFederate {
+		wstring reason;
+	};
+
+	exception RegionNotKnown {
+		wstring reason;
+	};
+
+	exception RequestForTimeRegulationPending {
+		wstring reason;
+	};
+
+	exception RestoreInProgress {
+		wstring reason;
+	};
+
+	exception RestoreNotRequested {
+		wstring reason;
+	};
+
+	exception SaveInProgress {
+		wstring reason;
+	};
+
+	exception SaveNotInitiated {
+		wstring reason;
+	};
+
+	exception SpaceNotDefined {
+		wstring reason;
+	};
+
+	exception SpecifiedSaveLabelDoesNotExist {
+		wstring reason;
+	};
+
+	exception StartNotAllowed {
+		wstring reason;
+	};
+
+	exception SynchronizationPointLabelWasNotAnnounced {
+		wstring reason;
+	};
+
+	exception TimeAdvanceAlreadyInProgress {
+		wstring reason;
+	};
+
+	exception TimeConstrainedAlreadyEnabled {
+		wstring reason;
+	};
+
+	exception TimeConstrainedWasNotEnabled {
+		wstring reason;
+	};
+
+	exception TimeRegulationAlreadyEnabled {
+		wstring reason;
+	};
+
+	exception TimeRegulationIsNotEnabled {
+		wstring reason;
+	};
+
+	exception TimeRegulationWasNotEnabled {
+		wstring reason;
+	};
+
+	exception UnableToPerformSave {
+		string reason;
+	};
+
+	exception UnknownName {
+		string reason;
+	};
+
+	// Various typedefs.
+
+	// Basic identifier type.
+	typedef unsigned long GeRtiHandle;
+
+	// Sequence of basic identifier types.
+	typedef sequence <GeRtiHandle> Handles;
+
+	// Struct of attribute and regions.
+	struct AttributeRegions {
+		GeRtiFactory::GeRtiHandle theAttribute;
+		GeRtiFactory::Handles theRegions;
+	};
+	typedef sequence <AttributeRegions> AttributeRegionsSeq;
+
+	// Struct of attribute and subscribers.
+	struct AttributeSubscribers {
+		GeRtiFactory::GeRtiHandle theAttribute;
+		GeRtiFactory::Handles theSubscribers;
+	};
+	typedef sequence <AttributeSubscribers> AttributeSubscribersSeq;
+
+	// Used for binary/string data.
+	typedef sequence <octet> OctetSequence;
+		
+	// Used for binary/string data for attribute/parameter.
+	struct HandleValue {
+    // Attribute id.
+		GeRtiFactory::GeRtiHandle id;
+		// Set in gerti, used by LRC - for object attributes.
+		boolean timestampOrder;
+		// Set in gerti, used by LRC - for object attributes.
+		boolean bestEffort;
+    // List of subscribers to receive this value - update only.
+		GeRtiFactory::Handles theSubscribers;
+    // Data value.
+		OctetSequence value;
+	};
+	
+	// Sequence of handle values.
+	// NB. same id may occur more than once.
+	typedef sequence <HandleValue> HandleValues;
+	
+	struct ERHandle {
+		GeRtiHandle theSerialNumber;
+		GeRtiHandle sendingFederate;
+	};
+
+	typedef sequence <octet> UserSuppliedTag;
+
+	struct InteractionClassData {
+		wstring name;
+		GeRtiFactory::GeRtiHandle theOrderType;
+		GeRtiFactory::GeRtiHandle theTransportationType;
+    GeRtiFactory::Handles theDimensions;
+	};
+
+	struct ItemClassData {
+		GeRtiFactory::GeRtiHandle theId;
+		wstring name;
+		GeRtiFactory::GeRtiHandle theOrderType;
+		GeRtiFactory::GeRtiHandle theTransportationType;
+    GeRtiFactory::Handles theDimensions;
+	};
+
+	typedef sequence <ItemClassData> ItemsClassData;
+
+	struct ParameterClassData {
+		GeRtiFactory::GeRtiHandle theId;
+		wstring name;
+	};
+
+	typedef sequence <ParameterClassData> ParametersClassData;
+
+	struct AttData {
+		GeRtiFactory::GeRtiHandle theId;
+		GeRtiFactory::GeRtiHandle theFederate;
+		GeRtiFactory::GeRtiHandle theAcquiringFederate;
+		GeRtiFactory::Handles theRegions;
+		GeRtiFactory::GeRtiHandle theStatus;
+		GeRtiFactory::GeRtiHandle theOrderType;
+		GeRtiFactory::GeRtiHandle theTransportationType;
+	};
+
+	typedef sequence <AttData> AttributesData;
+
+	struct Range {
+		GeRtiFactory::GeRtiHandle dimension;
+		unsigned long lower;
+		unsigned long upper;
+	};
+
+	typedef sequence <Range> Ranges;
+
+	typedef sequence <Ranges> Extents;
+
+	typedef sequence<octet> Time;
+
+	interface TimeManagement {
+    void disableTimeRegulation (
+      in GeRtiFactory::GeRtiHandle theFederate)
+      raises (
+        TimeRegulationIsNotEnabled,
+        FederateNotExecutionMember,
+        SaveInProgress,
+        RestoreInProgress,
+        RTIinternalError);	
+
+		void disableTimeConstrained (
+      in GeRtiFactory::GeRtiHandle theFederate)
+		raises (
+			GeRtiFactory::TimeConstrainedWasNotEnabled,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void queryGALT (
+      in GeRtiFactory::GeRtiHandle theFederate,
+			out GeRtiFactory::Time theTime)
+		raises (
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void queryLITS (
+      in GeRtiFactory::GeRtiHandle theFederate,
+			out GeRtiFactory::Time theTime)
+		raises (
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void queryLookahead (
+      in GeRtiFactory::GeRtiHandle theFederate,
+			out GeRtiFactory::Time theTime)
+		raises (
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+	};
+
+  interface GeRtiAmbassador {
+	//////////////////////////
+	// RTI Support Services //
+	//////////////////////////
+		GeRtiFactory::GeRtiHandle getAttributeHandle (
+			in wstring name,
+			in GeRtiFactory::GeRtiHandle whichClass)
+		raises (
+			ObjectClassNotDefined,
+			NameNotFound,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError
+			);
+			
+		/* 
+		@roseuid 3A07DFB201D4 */
+		wstring getAttributeName (
+			in GeRtiFactory::GeRtiHandle handle,
+                        in GeRtiFactory::GeRtiHandle whichClass)
+		raises (
+			ObjectClassNotDefined,
+                        AttributeNotDefined,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError
+			);
+			
+		/* 
+		@roseuid 3A07DFB60399 */
+		GeRtiFactory::GeRtiHandle getObjectInstanceHandle (
+			in wstring name)
+		raises (
+			ObjectNotKnown,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError
+			);
+			
+		/* 
+		@roseuid 3A07DFC0033C */
+		wstring getObjectInstanceName (
+			in GeRtiFactory::GeRtiHandle handle)
+		raises (
+			ObjectNotKnown,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError
+			);
+			
+		/* 
+		@roseuid 3A07DFC50232 */
+		GeRtiFactory::GeRtiHandle getInteractionClassHandle (
+			in wstring name,
+      out GeRtiFactory::Handles parents,
+      out InteractionClassData interactionData,
+      out ParametersClassData parameters)
+		raises (
+			NameNotFound,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError
+			);
+			
+		/* 
+		@roseuid 3A07DFCD032C */
+		wstring getInteractionClassName (
+			in GeRtiFactory::GeRtiHandle handle,
+      out GeRtiFactory::Handles parents,
+      out InteractionClassData interactionData,
+      out ParametersClassData parameters)
+		raises (
+			InteractionClassNotDefined,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError
+			);
+			
+		/* 
+		@roseuid 3A07DFD102EE */
+		GeRtiFactory::GeRtiHandle getObjectClassHandle (
+			in wstring name,
+      out GeRtiFactory::Handles parents,
+      out ItemsClassData attributes)
+		raises (
+			NameNotFound,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError
+			);
+			
+		/* 
+		@roseuid 3A07DFD7008C */
+		wstring getObjectClassName (
+			in GeRtiFactory::GeRtiHandle handle,
+      out GeRtiFactory::Handles parents,
+      out ItemsClassData attributes)
+		raises (
+			ObjectClassNotDefined,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError
+			);
+			
+		GeRtiFactory::GeRtiHandle getParameterHandle (
+			in wstring theName,
+			in GeRtiFactory::GeRtiHandle whichClass)
+		raises (
+			InteractionClassNotDefined,
+			NameNotFound,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError);
+
+		wstring getParameterName (
+			in GeRtiFactory::GeRtiHandle theHandle,
+			in GeRtiFactory::GeRtiHandle whichClass)
+		raises (
+			InteractionClassNotDefined,
+			InteractionParameterNotDefined,
+			FederateNotExecutionMember,
+                        ConcurrentAccessAttempted,
+			RTIinternalError);
+
+		GeRtiFactory::GeRtiHandle getRoutingSpaceHandle (
+			in wstring theName)
+		raises (
+			NameNotFound,
+			FederateNotExecutionMember,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		wstring getRoutingSpaceName (
+			in GeRtiFactory::GeRtiHandle theHandle)
+		raises (
+			SpaceNotDefined,
+			FederateNotExecutionMember,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		GeRtiFactory::GeRtiHandle getDimensionHandle (
+			in wstring theName,
+			in GeRtiFactory::GeRtiHandle   whichSpace)
+		raises (
+			SpaceNotDefined,
+			NameNotFound,
+			FederateNotExecutionMember,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		wstring getDimensionName (
+			in GeRtiFactory::GeRtiHandle theHandle,
+			in GeRtiFactory::GeRtiHandle     whichSpace)
+		raises (
+			SpaceNotDefined,
+			DimensionNotDefined,
+			FederateNotExecutionMember,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		GeRtiFactory::GeRtiHandle getDimensionUpperBound (
+			in GeRtiFactory::GeRtiHandle theHandle)   
+		raises (
+			DimensionNotDefined,
+            FederateNotExecutionMember,
+            RTIinternalError);
+
+		GeRtiFactory::Handles getAvailableDimensionsForClassAttribute (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::GeRtiHandle theHandle)   
+		raises (
+			ObjectClassNotDefined,
+            AttributeNotKnown,
+            AttributeNotDefined,
+            FederateNotExecutionMember,
+            RTIinternalError);
+
+		GeRtiFactory::Handles getAvailableDimensionsForInteractionClass (
+			in GeRtiFactory::GeRtiHandle theClass)
+		raises (
+			InteractionClassNotDefined,
+            FederateNotExecutionMember,
+            RTIinternalError);
+
+		GeRtiFactory::GeRtiHandle getAttributeRoutingSpaceHandle (
+			in GeRtiFactory::GeRtiHandle theHandle,   
+			in GeRtiFactory::GeRtiHandle whichClass)  
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			FederateNotExecutionMember,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		GeRtiFactory::GeRtiHandle getInteractionRoutingSpaceHandle (
+			in GeRtiFactory::GeRtiHandle   theHandle)   
+		raises (
+			InteractionClassNotDefined,
+			FederateNotExecutionMember,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		GeRtiFactory::Handles getDimensionHandleSet (
+			in GeRtiFactory::GeRtiHandle theRegionHandle)
+		raises (
+			RegionNotKnown,
+            FederateNotExecutionMember,
+            SaveInProgress,
+            RestoreInProgress,
+            RTIinternalError);
+
+		GeRtiFactory::Handles getRangeBounds (
+			in GeRtiFactory::GeRtiHandle theRegionHandle,
+			in GeRtiFactory::GeRtiHandle theDimensionHandle)
+		raises (
+			RegionNotKnown,
+            RegionDoesNotContainSpecifiedDimension,
+            FederateNotExecutionMember,
+            SaveInProgress,
+            RestoreInProgress,
+            RTIinternalError);
+
+		void setRangeBounds (
+			in GeRtiFactory::GeRtiHandle theRegionHandle,
+			in GeRtiFactory::GeRtiHandle theDimensionHandle,
+			in GeRtiFactory::GeRtiHandle theLowerBound,
+			in GeRtiFactory::GeRtiHandle theUpperBound)
+		raises (
+			RegionNotKnown,
+            RegionNotCreatedByThisFederate,
+            RegionDoesNotContainSpecifiedDimension,
+            InvalidRangeBound,
+            FederateNotExecutionMember,
+            SaveInProgress,
+            RestoreInProgress,
+            RTIinternalError);
+
+		/////////////////////////////////////
+		// Declaration Management Services //
+		/////////////////////////////////////
+		void publishObjectClass (
+			in GeRtiFactory::GeRtiHandle   theClass,
+			in GeRtiFactory::Handles  attributeList)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			OwnershipAcquisitionPending,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+ 
+		void unpublishObjectClass (
+			in GeRtiFactory::GeRtiHandle theClass)
+		raises (
+			ObjectClassNotDefined,
+			ObjectClassNotPublished,
+			OwnershipAcquisitionPending,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void unpublishObjectClassAttributes (
+			in GeRtiFactory::GeRtiHandle  theClass,
+			in GeRtiFactory::Handles attributeList)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			OwnershipAcquisitionPending,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void subscribeObjectClassAttributes (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::Handles attributeList,
+			in boolean active)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void unsubscribeObjectClass (
+			in GeRtiFactory::GeRtiHandle theClass)
+		raises (
+			ObjectClassNotDefined,
+			ObjectClassNotSubscribed,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void unsubscribeObjectClassAttributes (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::Handles attributeList)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		////////////////////////////////
+		// Object Management Services //
+		////////////////////////////////
+		void reserveObjectInstanceName (
+			in wstring theObjectInstanceName)
+		raises (
+			IllegalName,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		GeRtiFactory::GeRtiHandle registerObjectInstanceWithName (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in wstring theObjectName)
+		raises (
+			ObjectClassNotDefined,
+			ObjectClassNotPublished,
+			ObjectAlreadyRegistered,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		GeRtiFactory::GeRtiHandle registerObjectInstance (
+			in GeRtiFactory::GeRtiHandle theClass)
+		raises (
+			ObjectClassNotDefined,
+			ObjectClassNotPublished,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void deleteObjectInstance (
+			in GeRtiFactory::GeRtiHandle theObject,
+			in UserSuppliedTag      theTag)
+		raises (
+			ObjectNotKnown,
+			DeletePrivilegeNotHeld,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void deleteObjectInstanceWithTime (
+			in GeRtiFactory::GeRtiHandle theObject,
+			in GeRtiFactory::Time      theTime,
+			in UserSuppliedTag      theTag,
+			in GeRtiFactory::GeRtiHandle theSerialNumber)
+		raises (
+			ObjectNotKnown,
+			DeletePrivilegeNotHeld,
+            GeRtiFactory::InvalidFederationTime,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void localDeleteObjectInstance (
+			in GeRtiFactory::GeRtiHandle theObject)
+		raises (
+			ObjectNotKnown,
+			FederateOwnsAttributes,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void requestObjectAttributeValueUpdate (
+			in GeRtiFactory::GeRtiHandle theObject,
+			in GeRtiFactory::Handles theAttributes,
+			in UserSuppliedTag theTag)
+		raises (
+			ObjectNotKnown,
+			AttributeNotDefined,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void requestClassAttributeValueUpdate (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::Handles theAttributes,
+			in UserSuppliedTag theTag)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void enableClassRelevanceAdvisorySwitch()
+		raises(
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void disableClassRelevanceAdvisorySwitch()
+		raises(
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void enableAttributeScopeAdvisorySwitch()
+		raises(
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void disableAttributeScopeAdvisorySwitch()
+		raises(
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void registerFederationSynchronizationPointWithDesignators (
+			in wstring label,
+			in UserSuppliedTag           theTag,
+			in GeRtiFactory::Handles designators)
+		raises (
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void registerFederationSynchronizationPoint (
+			in wstring label,
+			in UserSuppliedTag           theTag)
+		raises (
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void synchronizationPointAchieved (
+			in wstring label)
+		raises (
+			SynchronizationPointLabelWasNotAnnounced,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void requestFederationSaveWithTime (
+			in wstring      label,
+			in GeRtiFactory::Time theTime)
+		raises (
+			FederationTimeAlreadyPassed,
+			InvalidFederationTime,
+			FederateUnableToUseTime,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void requestFederationSave (
+			in wstring      label)
+		raises (
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void federateSaveBegun ()
+		raises (
+			SaveNotInitiated,
+			FederateNotExecutionMember,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void federateSaveComplete (
+			in boolean success,
+			in string saveData)
+		raises (
+			SaveNotInitiated,
+			FederateNotExecutionMember,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void queryFederationSaveStatus ()
+		raises (
+			FederateNotExecutionMember,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void requestFederationRestore (
+			in wstring      label)
+		raises (
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void federateRestoreComplete (in boolean success)
+		raises (
+			RestoreNotRequested,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RTIinternalError);
+
+		void queryFederationRestoreStatus ()
+		raises (
+			FederateNotExecutionMember,
+            SaveInProgress,
+            RTIinternalError);
+
+		void requestFederateSaveStart(
+			in wstring      label,
+			in GeRtiFactory::Time theTime,
+			in boolean timeBoolean)
+		raises (
+			StartNotAllowed,
+			SaveNotInitiated,
+			FederateNotExecutionMember,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		///////////////////////////////////
+		// Ownership Management Services //
+		///////////////////////////////////
+
+		GeRtiFactory::GeRtiHandle getPrivilegeToDeleteId ();
+
+		// 7.2
+		// IEEE
+		void unconditionalAttributeOwnershipDivestiture (
+			in GeRtiFactory::GeRtiHandle fedId, 
+		        in GeRtiFactory::GeRtiHandle   theObject,     
+		        in GeRtiFactory::Handles theAttributes) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown, 
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::AttributeNotOwned,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+		
+		// 7.3
+		// IEEE
+		void negotiatedAttributeOwnershipDivestiture (
+			in GeRtiFactory::GeRtiHandle fedId, 
+		        in GeRtiFactory::GeRtiHandle  theObject,     
+		        in GeRtiFactory::Handles theAttributes, 
+		        in UserSuppliedTag theTag)        
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::AttributeNotOwned,
+		  GeRtiFactory::AttributeAlreadyBeingDivested,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+		
+		// 7.7
+		// IEEE
+		void attributeOwnershipAcquisition (
+			in GeRtiFactory::GeRtiHandle fedId, 
+		        in GeRtiFactory::GeRtiHandle  theObject,         
+		        in GeRtiFactory::Handles desiredAttributes, 
+		        in UserSuppliedTag theTag)            
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::ObjectClassNotPublished,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::AttributeNotPublished,
+		  GeRtiFactory::FederateOwnsAttributes,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+		
+		// 7.8
+		// IEEE
+		void attributeOwnershipAcquisitionIfAvailable (
+			in GeRtiFactory::GeRtiHandle fedId, 
+		    in GeRtiFactory::GeRtiHandle  theObject,         
+		    in GeRtiFactory::Handles desiredAttributes) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::ObjectClassNotPublished,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::AttributeNotPublished,
+		  GeRtiFactory::FederateOwnsAttributes,
+		  GeRtiFactory::AttributeAlreadyBeingAcquired,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+		
+		GeRtiFactory::Handles
+		attributeOwnershipDivestitureIfWanted (
+			in GeRtiFactory::GeRtiHandle fedId, 
+			in GeRtiFactory::GeRtiHandle theObject,
+			in GeRtiFactory::Handles theAttributes)
+		raises (
+			ObjectNotKnown,
+			AttributeNotDefined,
+			AttributeNotOwned,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		// 7.11
+		GeRtiFactory::Handles
+		confirmDivestiture (
+			in GeRtiFactory::GeRtiHandle fedId, 
+		        in GeRtiFactory::GeRtiHandle  theObject,     
+		        in GeRtiFactory::Handles theAttributes,
+				in UserSuppliedTag theTag) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::AttributeNotOwned,
+		  GeRtiFactory::FederateWasNotAskedToReleaseAttribute,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+		
+		// 7.12
+		// IEEE
+		void cancelNegotiatedAttributeOwnershipDivestiture (
+			in GeRtiFactory::GeRtiHandle fedId, 
+		        in GeRtiFactory::GeRtiHandle  theObject,     
+		        in GeRtiFactory::Handles theAttributes) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::AttributeNotOwned,
+		  GeRtiFactory::AttributeDivestitureWasNotRequested,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+		
+		// 7.13
+		// IEEE
+		void cancelAttributeOwnershipAcquisition (
+			in GeRtiFactory::GeRtiHandle fedId, 
+		        in GeRtiFactory::GeRtiHandle  theObject,     
+		        in GeRtiFactory::Handles theAttributes) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::AttributeAlreadyOwned,
+		  GeRtiFactory::AttributeAcquisitionWasNotRequested,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+		
+		// 7.15
+		// IEEE
+		void queryAttributeOwnership (
+			in GeRtiFactory::GeRtiHandle fedId, 
+			in GeRtiFactory::GeRtiHandle theObject,    
+			in GeRtiFactory::GeRtiHandle theAttribute) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+		
+		// 7.17
+		// IEEE
+		boolean
+		isAttributeOwnedByFederate (
+			in GeRtiFactory::GeRtiHandle fedId, 
+			in GeRtiFactory::GeRtiHandle theObject,     
+			in GeRtiFactory::GeRtiHandle theAttribute)  
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::ConcurrentAccessAttempted,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError);
+
+    void processUnpublishOwnershipCandidate (
+      in GeRtiFactory::GeRtiHandle theFederate,
+      in GeRtiFactory::GeRtiHandle theClass,
+      in GeRtiFactory::Handles theAttributes)
+    raises (
+		  GeRtiFactory::ObjectClassNotDefined,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::FederateNotExecutionMember,
+		  GeRtiFactory::SaveInProgress,
+		  GeRtiFactory::RestoreInProgress,
+		  GeRtiFactory::RTIinternalError      );
+
+		//////////////////////////////////
+		// Data Distribution Management //
+		//////////////////////////////////
+		// For HLA 1.3 use: theSpace and numberOfExtents
+		//                  (theDimensions is an empty list)
+		// For IEEE 1516 use: theDimensions
+		//                    (theSpace == 0)
+		//                    (numberOfExtents == number of dimensions)
+		GeRtiFactory::GeRtiHandle createRegion (
+			in GeRtiFactory::GeRtiHandle theSpace,
+			in unsigned long numberOfExtents,
+			in GeRtiFactory::Handles theDimensions)
+		raises (
+			GeRtiFactory::SpaceNotDefined,
+			GeRtiFactory::InvalidExtents,
+			GeRtiFactory::FederateNotExecutionMember,
+			GeRtiFactory::SaveInProgress,
+			GeRtiFactory::RestoreInProgress,
+			GeRtiFactory::RTIinternalError,
+			GeRtiFactory::ConcurrentAccessAttempted);
+ 
+		void modifyRegion (
+			in GeRtiFactory::GeRtiHandle theRegion,
+			in Extents theExtents)
+		raises (
+			GeRtiFactory::RegionNotKnown,
+			GeRtiFactory::InvalidExtents,
+			GeRtiFactory::FederateNotExecutionMember,
+			GeRtiFactory::SaveInProgress,
+			GeRtiFactory::RestoreInProgress,
+			GeRtiFactory::RTIinternalError,
+			GeRtiFactory::ConcurrentAccessAttempted);
+ 
+		void deleteRegion (
+			in GeRtiFactory::GeRtiHandle theRegion)
+		raises (
+			GeRtiFactory::RegionNotKnown,
+			GeRtiFactory::RegionInUse,
+			GeRtiFactory::FederateNotExecutionMember,
+			GeRtiFactory::SaveInProgress,
+			GeRtiFactory::RestoreInProgress,
+			GeRtiFactory::RTIinternalError,
+			GeRtiFactory::ConcurrentAccessAttempted);
+
+		GeRtiFactory::GeRtiHandle registerObjectInstanceWithNameWithRegions (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::AttributeRegionsSeq theAttributeRegions,
+			in wstring theObjectName)
+		raises (
+			ObjectClassNotDefined,
+			ObjectClassNotPublished,
+			AttributeNotDefined,
+			AttributeNotPublished,
+			RegionNotKnown,
+			InvalidRegionContext,
+			ObjectAlreadyRegistered,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		GeRtiFactory::GeRtiHandle registerObjectInstanceWithRegions (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::AttributeRegionsSeq theAttributeRegions)
+		raises (
+			ObjectClassNotDefined,
+			ObjectClassNotPublished,
+			AttributeNotDefined,
+			AttributeNotPublished,
+			RegionNotKnown,
+			InvalidRegionContext,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void associateRegionsForUpdates (
+                        in GeRtiFactory::GeRtiHandle theObject,
+			in GeRtiFactory::AttributeRegionsSeq theAttributeRegions)
+		raises (
+			GeRtiFactory::ObjectNotKnown,
+			GeRtiFactory::AttributeNotDefined,
+			GeRtiFactory::InvalidRegionContext,
+			GeRtiFactory::RegionNotKnown,
+			GeRtiFactory::FederateNotExecutionMember,
+			GeRtiFactory::ConcurrentAccessAttempted,
+			GeRtiFactory::SaveInProgress,
+			GeRtiFactory::RestoreInProgress,
+			GeRtiFactory::RTIinternalError);
+
+		void unassociateRegionForUpdates (
+            in GeRtiFactory::GeRtiHandle theRegion,
+			in GeRtiFactory::GeRtiHandle theObject)
+		raises (
+			GeRtiFactory::ObjectNotKnown,
+			GeRtiFactory::InvalidRegionContext,
+			GeRtiFactory::RegionNotKnown,
+			GeRtiFactory::FederateNotExecutionMember,
+			GeRtiFactory::ConcurrentAccessAttempted,
+			GeRtiFactory::SaveInProgress,
+			GeRtiFactory::RestoreInProgress,
+			GeRtiFactory::RTIinternalError);
+
+		void unassociateRegionsForUpdates (
+            in GeRtiFactory::GeRtiHandle theObject,
+			in GeRtiFactory::AttributeRegionsSeq theAttributeRegions)
+		raises (
+			GeRtiFactory::ObjectNotKnown,
+			GeRtiFactory::InvalidRegionContext,
+			GeRtiFactory::RegionNotKnown,
+			GeRtiFactory::FederateNotExecutionMember,
+			GeRtiFactory::ConcurrentAccessAttempted,
+			GeRtiFactory::SaveInProgress,
+			GeRtiFactory::RestoreInProgress,
+			GeRtiFactory::RTIinternalError);
+
+		void subscribeObjectClassAttributesWithRegions (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::AttributeRegionsSeq theAttributeRegions,
+			in boolean active)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			RegionNotKnown,
+			InvalidRegionContext,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void unsubscribeObjectClassWithRegion (
+			in GeRtiFactory::GeRtiHandle theClass,
+            in GeRtiFactory::GeRtiHandle  theRegion)
+		raises (
+			ObjectClassNotDefined,
+			RegionNotKnown,
+            ObjectClassNotSubscribed,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void unsubscribeObjectClassWithRegions (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::AttributeRegionsSeq theAttributeRegions)
+		raises (
+			ObjectClassNotDefined,
+			RegionNotKnown,
+            ObjectClassNotSubscribed,
+			FederateNotExecutionMember,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void subscribeInteractionClassWithRegions (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in boolean active,
+			in GeRtiFactory::Handles theRegions)
+		raises (
+			InteractionClassNotDefined,
+			RegionNotKnown,
+			InvalidRegionContext,
+			FederateLoggingServiceCalls,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void unsubscribeInteractionClassWithRegions (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::Handles theRegions)
+		raises (
+			InteractionClassNotDefined,
+			InteractionClassNotSubscribed,
+			RegionNotKnown,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		void requestAttributeValueUpdateWithRegions (
+			in GeRtiFactory::GeRtiHandle  theClass,
+			in GeRtiFactory::AttributeRegionsSeq theAttributeRegions,
+			in UserSuppliedTag theTag)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			RegionNotKnown,
+			FederateNotExecutionMember,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+
+		// The KNOWN object class.
+		GeRtiFactory::GeRtiHandle getObjectClass (
+			in GeRtiFactory::GeRtiHandle theObject)    
+		raises (
+			ObjectNotKnown,
+			FederateNotExecutionMember,
+			RTIinternalError,
+			ConcurrentAccessAttempted);
+	};
+
+	interface GeRtiRestore {
+		void resetLRC ();
+
+		void setLRCFederate (
+			in GeRtiFactory::GeRtiHandle theFederateId);
+			
+		void publishInteractionClass (
+			in GeRtiFactory::GeRtiHandle theInteraction)
+		raises (
+			InteractionClassNotDefined,
+			RTIinternalError);
+ 
+		void publishObjectClass (
+			in GeRtiFactory::GeRtiHandle   theClass,
+			in GeRtiFactory::Handles  attributeList)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			RTIinternalError);
+
+		void subscribeInteractionClass (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in boolean active)
+		raises (
+			InteractionClassNotDefined,
+			RTIinternalError);
+
+		void subscribeInteractionClassWithRegion (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in boolean active,
+			in GeRtiFactory::GeRtiHandle theRegion)
+		raises (
+			InteractionClassNotDefined,
+			RegionNotKnown,
+			RTIinternalError);
+
+		void subscribeObjectClassAttributes (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::Handles attributeList,
+			in boolean active)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			RTIinternalError);
+
+		void subscribeObjectClassAttributesWithRegion (
+			in GeRtiFactory::GeRtiHandle theClass,
+			in GeRtiFactory::Handles attributeList,
+			in boolean active,
+			in GeRtiFactory::GeRtiHandle  theRegion)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			RegionNotKnown,
+			InvalidRegionContext,
+			RTIinternalError);
+
+		void loadObject (
+			in GeRtiFactory::GeRtiHandle theObjectId,
+			in wstring theObjectName,
+			in GeRtiFactory::GeRtiHandle theClass,
+			in AttributesData theAttributesData)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			RegionNotKnown,
+			InvalidRegionContext,
+			RTIinternalError);
+
+		void loadRegion (
+			in GeRtiFactory::GeRtiHandle theSpace,
+			in GeRtiFactory::GeRtiHandle theRegion,
+			in Extents theExtents)
+		raises (
+			ObjectClassNotDefined,
+			AttributeNotDefined,
+			RegionNotKnown,
+			InvalidRegionContext,
+			RTIinternalError);
+
+		void loadLRC (
+			in string restoreData)
+		raises (
+			RTIinternalError);
+	};
+
+	enum RestoreFailureReason {
+		rtiUnableToRestore,
+		federateReportedFailureDuringRestore,
+		federateResignedDuringRestore,
+		rtiDetectedFailureDuringRestore
+	};
+
+	enum RestoreStatus {
+		noRestoreInProgress,
+		federateRestoreRequestPending,
+		federateWaitingForRestoreToBegin,
+		federatePreparedToRestore,
+		federateRestoring,
+		federateWaitingForFederationToRestore
+	};
+
+	enum SaveFailureReason {
+		rtiUnableToSave,
+		federateReportedFailureDuringSave,
+		federateResignedDuringSave,
+		rtiDetectedFailureDuringSave,
+		saveTimeCannotBeHonored
+	};
+
+	enum SaveStatus {
+		noSaveInProgress,
+		federateInstructedToSave,
+		federateSaving,
+		federateWaitingForFederationToSave
+	};
+
+	enum SynchronizationPointFailureReason {
+		synchronizationPointLabelNotUnique,
+		synchronizationSetMemberNotJoined,
+		federateResignedDuringSynchronization,
+		rtiDetectedFailureDuringSynchronization,
+		synchronizationTimeCannotBeHonored
+	};
+	
+	// Struct of fedrate and restore status.
+	struct RestoreStatusPair {
+		GeRtiFactory::GeRtiHandle theFederate;
+		RestoreStatus theRestoreStatus;
+	};
+	typedef sequence <RestoreStatusPair> RestoreStatusPairSeq;
+
+	// Struct of fedrate and save status.
+	struct SaveStatusPair {
+		GeRtiFactory::GeRtiHandle theFederate;
+		SaveStatus theSaveStatus;
+	};
+	typedef sequence <SaveStatusPair> SaveStatusPairSeq;
+
+        interface FederateAmbassador {
+		////////////////////////////////////
+		// Utility Functions              //
+		////////////////////////////////////
+		void ping (
+			);
+
+		////////////////////////////////////
+		// Federation Management Services //
+		////////////////////////////////////
+
+		void confirmSynchronizationPointRegistration (
+			in wstring label,
+			in boolean success,
+			in SynchronizationPointFailureReason reason)
+		raises (
+			FederateInternalError);
+
+		void announceSynchronizationPoint (
+			in wstring label,
+			in UserSuppliedTag           tag)
+		raises (
+			FederateInternalError);
+
+		void federationSynchronized (
+			in wstring label)
+		raises (
+			FederateInternalError);
+
+		void initiateFederateSave (
+			in wstring label
+			)
+		raises (
+			UnableToPerformSave,
+			FederateInternalError);
+
+		void initiateFederateSaveWithTime (
+			in wstring label,
+			in GeRtiFactory::Time theTime)
+		raises (
+			UnableToPerformSave,
+			GeRtiFactory::InvalidFederationTime,
+			FederateInternalError);
+
+		void federationSaved (
+			in boolean success,
+			in GeRtiFactory::SaveFailureReason failureReason)
+		raises (
+			FederateInternalError);
+
+		void federationSaveStatusResponse (
+			in SaveStatusPairSeq theFederateStatusVector)
+		raises (
+			FederateInternalError);
+
+		void confirmFederationRestorationRequest (
+			in wstring label,
+			in boolean    reason)
+		raises (
+			FederateInternalError);
+
+		void federationRestoreBegun ()
+		raises (
+			FederateInternalError);
+
+		void initiateFederateRestore (
+			in wstring      label,
+			in GeRtiFactory::GeRtiHandle handle)
+		raises (
+			SpecifiedSaveLabelDoesNotExist,
+			CouldNotRestore,
+			FederateInternalError);
+
+		void federationRestored (
+			in boolean success,
+			in RestoreFailureReason failureReason)
+		raises (
+			FederateInternalError);
+
+		void federationRestoreStatusResponse(
+			in RestoreStatusPairSeq theFederateStatusVector)
+		raises (
+			FederateInternalError);
+
+		////////////////////////////////
+		// Object Management Services //
+		////////////////////////////////
+
+		void objectInstanceNameReservationSucceeded(
+			in wstring theObjectInstanceName)
+		raises (
+			UnknownName,
+			FederateInternalError);
+
+		void objectInstanceNameReservationFailed(
+			in wstring theObjectInstanceName)
+		raises (
+			UnknownName,
+			FederateInternalError);
+
+                void announceObjectInstance (
+                        in GeRtiFactory::GeRtiHandle theObject,
+                        in GeRtiFactory::GeRtiHandle theObjectClass,
+				                in GeRtiFactory::Handles theAttributes,
+                        in wstring theObjectName)
+                raises (
+                        CouldNotDiscover,
+                        ObjectClassNotKnown,
+                        FederateInternalError);
+
+                void discoverObjectInstance (
+                        in GeRtiFactory::GeRtiHandle theObject,
+                        in GeRtiFactory::GeRtiHandle theObjectClass,
+                        in wstring theObjectName)
+                raises (
+                        CouldNotDiscover,
+                        ObjectClassNotKnown,
+                        FederateInternalError);
+
+                void removeObjectInstance (
+                        in GeRtiFactory::GeRtiHandle theObject,
+			in UserSuppliedTag      theTag)
+                raises (
+                        ObjectNotKnown,
+                        FederateInternalError);
+
+			void removeObjectInstanceWithTime (
+				in GeRtiFactory::GeRtiHandle theObject,
+				in UserSuppliedTag      theTag,
+				in GeRtiFactory::Time      theTime,
+				in GeRtiFactory::ERHandle theERHandle)
+			raises (
+				ObjectNotKnown,
+				GeRtiFactory::InvalidFederationTime,
+				FederateInternalError);
+
+			void attributesInScope (
+				in GeRtiFactory::GeRtiHandle theObject,
+				in GeRtiFactory::Handles theAttributes)
+			raises (
+				ObjectNotKnown,
+				AttributeNotKnown,
+				FederateInternalError);
+ 
+			void attributesOutOfScope (
+				in GeRtiFactory::GeRtiHandle theObject,
+				in GeRtiFactory::Handles theAttributes)
+			raises (
+				ObjectNotKnown,
+				AttributeNotKnown,
+				FederateInternalError);
+
+            void provideAttributeValueUpdate (
+                in GeRtiFactory::GeRtiHandle theObject,
+                in GeRtiFactory::Handles theAttributes,
+				in UserSuppliedTag theTag)
+            raises (
+                 ObjectNotKnown,
+                 AttributeNotKnown,
+                 AttributeNotOwned,
+                 FederateInternalError);
+
+            void turnUpdatesOnForObjectInstance (
+                 in GeRtiFactory::GeRtiHandle theObject,
+                 in AttributeSubscribersSeq theAttributeSubscribers)
+            raises (
+                 ObjectNotKnown,
+                 AttributeNotOwned,
+                 FederateInternalError);
+
+            void turnUpdatesOffForObjectInstance (
+                 in GeRtiFactory::GeRtiHandle theObject,
+                 in AttributeSubscribersSeq theAttributeSubscribers)
+            raises (
+                 ObjectNotKnown,
+                 AttributeNotOwned,
+                 FederateInternalError);
+
+		//////////////////////////
+    // Ownership Management //
+		//////////////////////////
+
+		// 7.4
+		// IEEE
+		void requestAttributeOwnershipAssumption (
+		  in GeRtiFactory::GeRtiHandle        theObject,         
+		  in GeRtiFactory::Handles offeredAttributes, 
+		  in UserSuppliedTag theTag)            
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::AttributeAlreadyOwned,
+		  GeRtiFactory::AttributeNotPublished,
+		  GeRtiFactory::FederateInternalError);
+		
+		// IEEE
+		void requestDivestitureConfirmation (
+		  in GeRtiFactory::GeRtiHandle        theObject,          
+		  in GeRtiFactory::Handles releasedAttributes) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::AttributeNotOwned,
+		  GeRtiFactory::AttributeDivestitureWasNotRequested,
+		  GeRtiFactory::FederateInternalError);
+		 
+		// 7.5
+		// IEEE
+		void attributeOwnershipDivestitureNotification (
+		  in GeRtiFactory::GeRtiHandle        theObject,          
+		  in GeRtiFactory::Handles releasedAttributes) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::AttributeNotOwned,
+		  GeRtiFactory::AttributeDivestitureWasNotRequested,
+		  GeRtiFactory::FederateInternalError);
+		 
+		// 7.6
+		void attributeOwnershipAcquisitionNotification (
+		  in GeRtiFactory::GeRtiHandle        theObject,         
+		  in GeRtiFactory::Handles securedAttributes, 
+		  in UserSuppliedTag theTag) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::AttributeAcquisitionWasNotRequested,
+		  GeRtiFactory::AttributeAlreadyOwned,
+		  GeRtiFactory::AttributeNotPublished,
+		  GeRtiFactory::FederateInternalError);
+		 
+		// 7.9
+		// IEEE
+		void attributeOwnershipUnavailable (
+		  in GeRtiFactory::GeRtiHandle        theObject,         
+		  in GeRtiFactory::Handles theAttributes) 
+		raises (
+		   GeRtiFactory::ObjectNotKnown,
+		   GeRtiFactory::AttributeNotKnown,
+		   GeRtiFactory::AttributeNotDefined,
+		   GeRtiFactory::AttributeAlreadyOwned,
+		   GeRtiFactory::AttributeAcquisitionWasNotRequested,
+		   GeRtiFactory::FederateInternalError);
+		 
+		// 7.10
+		// IEEE
+		void requestAttributeOwnershipRelease (
+		  in GeRtiFactory::GeRtiHandle        theObject,           
+		  in GeRtiFactory::Handles candidateAttributes, 
+		  in UserSuppliedTag theTag)              
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::AttributeNotOwned,
+		  GeRtiFactory::FederateInternalError);
+		 
+		// 7.14
+		// IEEE
+		void confirmAttributeOwnershipAcquisitionCancellation (
+		  in GeRtiFactory::GeRtiHandle        theObject,         
+		  in GeRtiFactory::Handles theAttributes) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::AttributeNotDefined,
+		  GeRtiFactory::AttributeAlreadyOwned,
+		  GeRtiFactory::AttributeAcquisitionWasNotCanceled,
+		  GeRtiFactory::FederateInternalError);
+		 
+		// 7.16
+		// IEEE
+		void informAttributeOwnership (
+		  in GeRtiFactory::GeRtiHandle    theObject,    
+		  in GeRtiFactory::GeRtiHandle theAttribute, 
+		  in GeRtiFactory::GeRtiHandle  theOwner)     
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::FederateInternalError);
+		 
+		void attributeIsNotOwned (
+		  in GeRtiFactory::GeRtiHandle    theObject,    
+		  in GeRtiFactory::GeRtiHandle theAttribute) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::FederateInternalError);
+		 
+		void attributeOwnedByRTI (
+		  in GeRtiFactory::GeRtiHandle    theObject,    
+		  in GeRtiFactory::GeRtiHandle theAttribute) 
+		raises (
+		  GeRtiFactory::ObjectNotKnown,
+		  GeRtiFactory::AttributeNotKnown,
+		  GeRtiFactory::FederateInternalError);
+
+    //////////////////////////
+		// Managed Object Model //
+		//////////////////////////
+			void doMomRequest(in GeRtiFactory::GeRtiHandle theRequest,
+							in GeRtiFactory::HandleValues data);
+
+			void getMomData(in GeRtiFactory::GeRtiHandle theRequest,
+							in GeRtiFactory::Handles theAttributes,
+							out GeRtiFactory::HandleValues data);
+        };
+
+	enum ResignAction {
+		unconditionallyDivestAttributes,
+		deleteObjects,
+		cancelPendingOwnershipAquisitions,
+		deleteObjectsThenDivest,
+		cancelThenDeleteThenDivest,
+		noAction
+	};
+
+	interface PushSupplier {
+		/* 
+		@roseuid 3A02908A033C */
+		void disconnect_push_supplier ();
+			
+	};
+	
+	/* used for attributes and parameters */
+	
+	enum GEventType {
+		interaction,
+		obj
+	};
+	
+	/* GeRTI specific Event Type to transport Simulation Events */
+	
+	struct GeRtiEvent {
+		/* object update or interaction */
+		GeRtiFactory::GEventType type;
+		/* handle to either the object or interaction class */
+		GeRtiFactory::GeRtiHandle class;
+		/* owning federate */
+		GeRtiFactory::GeRtiHandle source;
+		/* for event retraction */
+		GeRtiFactory::GeRtiHandle theSerialNumber;
+		/* optional */
+		GeRtiFactory::Time timestamp;
+    // Best effort flag - interaction only.
+		boolean bestEffort;
+    // List of subscribers to receive this value - interaction only.
+		GeRtiFactory::Handles theSubscribers;
+    // The attribute / parameter data value.
+		GeRtiFactory::HandleValues data;
+    // The user supplied tag.
+		GeRtiFactory::UserSuppliedTag theTag;
+		GeRtiFactory::GeRtiHandle obj;
+    // Non-zero only for interaction class
+		GeRtiFactory::GeRtiHandle reg;
+		boolean tso;
+	};
+	
+	struct GertiFmEvent {
+	/*
+    service values:
+		joinFederationExecution == 0
+		resignFederationExecution == 1
+	*/
+		long service;
+    // Federate id.
+		GeRtiFactory::GeRtiHandle sourceId;
+	};
+
+	struct GertiTmEvent {
+	/*
+    service values:
+		enableTimeRegulation == 0
+		timeRegulationEnabled == 1
+		disableTimeRegulation == 2
+		enableTimeConstrained == 3
+		timeConstrainedEnabled == 4
+		disableTimeConstrained == 5
+		timeAdvanceRequest == 6
+		timeAdvanceRequestAvailable == 7
+		nextMessageRequest == 8
+		nextMessageRequestAvailable == 9
+		flushQueueRequest == 10
+		timeAdvanceGrant == 11
+		modifyLookahead == 12
+		retract == 13
+		requestRetraction == 14
+		timeRegulationPeerEnabled == 15
+		timeConstrainedPeerEnabled == 16
+	*/
+		long service;
+    // Main time value.
+		GeRtiFactory::Time timestamp;
+    // Another time value.
+		GeRtiFactory::Time timestampTwo;
+    // Federate or event hub id.
+		GeRtiFactory::GeRtiHandle sourceId;
+    // Handle for retract.
+		GeRtiFactory::GeRtiHandle theHandle;
+	};
+
+	struct GertiDmEvent {
+	/*
+    service values:
+		publishObjectClass == 0
+		unpublishObjectClass == 1
+		publishInteractionClass == 2
+		unpublishInteractionClass == 3
+		subscribeObjectClassAttributes == 4
+		unsubscribeObjectClass == 5
+		subscribeInteractionClass == 6
+		unsubscribeInteractionClass == 7
+		unpublishObjectClassAttributes == 8
+		unsubscribeObjectClassAttributes == 9
+		startRegistrationForObjectClass == 10
+		stopRegistrationForObjectClass == 11
+		turnInteractionsOn == 12
+		turnInteractionsOff == 13
+	*/
+		long service;
+    // Federate or event hub id.
+		GeRtiFactory::GeRtiHandle sourceId;
+    // Handle.
+		GeRtiFactory::GeRtiHandle theHandle;
+    // Handles.
+		GeRtiFactory::Handles theHandles;
+    // Base class handles.
+		GeRtiFactory::Handles theBaseClassHandles;
+    // Active
+    boolean theActive;
+	};
+
+	struct GertiDdmEvent {
+	/*
+    service values:
+		createRegion == 0
+		modifyRegion == 1
+		deleteRegion == 2
+		subscribeObjectClassWithRegion == 3
+		unsubscribeObjectClassWithRegion == 4
+		subscribeInteractionClassWithRegion == 5
+		unsubscribeInteractionClassWithRegion == 6
+		requestAttributeValueUpdateWithRegion == 7
+	*/
+		long service;
+    // Federate or event hub id.
+		GeRtiFactory::GeRtiHandle sourceId;
+    // Handle.
+		GeRtiFactory::GeRtiHandle theHandle;
+    // Extent number or bool for active subscribe.
+		long numOrBool;
+    // Handles.
+		GeRtiFactory::Handles theHandles;
+    // Attribute regions sequence.
+    AttributeRegionsSeq theAttributeRegionsSeq;
+    // User supplied tag.
+    UserSuppliedTag theTag;
+	};
+
+	union PushEvent switch (long) {
+	case 0:
+		GeRtiFactory::GeRtiEvent e;
+	case 1:
+		GeRtiFactory::GertiTmEvent tmEvent;
+	case 2:
+		GeRtiFactory::GertiDmEvent dmEvent;
+	case 3:
+		GeRtiFactory::GertiDdmEvent ddmEvent;
+	case 4:
+		GeRtiFactory::GertiFmEvent fmEvent;
+	};
+
+	typedef sequence <PushEvent> Events;
+	
+	struct GertiPushEvent {
+    /*
+      0 == gerti
+      1 == hub
+      2 == federate
+    */
+		GeRtiFactory::GeRtiHandle sourceType;
+    boolean reliableFlag;
+		GeRtiFactory::Events e;
+	};
+
+  interface PushConsumer {
+
+		oneway void push (
+			in GeRtiFactory::GertiPushEvent e
+			);
+			
+		/* 
+		@roseuid 3A065EC40271 */
+		void disconnect_push_consumer ();
+			
+	};
+	
+	interface ProxyPushConsumer : PushConsumer {
+		/* 
+		@roseuid 3A028FDF0177 */
+		void connect_push_supplier (
+			in GeRtiFactory::PushSupplier supplier
+			);
+			
+		/* 
+		@roseuid 3A02905202BF */
+		void disconnect ();
+			
+	};
+	
+	interface SupplierAdmin {
+		/* 
+		@roseuid 3A028F3303C8 */
+		GeRtiFactory::ProxyPushConsumer obtain_push_consumer (
+      /*
+        0 == gerti
+        1 == hub
+        2 == federate
+      */
+			in GeRtiFactory::GeRtiHandle sourceType,
+      // For federates.
+			in GeRtiFactory::GeRtiHandle sourceId,
+      // For hubs.
+			in wstring sourceName
+			);
+			
+	};
+	
+	interface ProxyPushSupplier : PushSupplier {
+		/* 
+		@roseuid 3A02902603D8 */
+		void connect_push_consumer (
+			in GeRtiFactory::PushConsumer consumer
+			);
+
+		void disconnect ();
+			
+	};
+	
+	interface ConsumerAdmin {
+		/* 
+		@roseuid 3A028EFC02DE */
+		GeRtiFactory::ProxyPushSupplier obtain_push_supplier (
+      /*
+        0 == gerti
+        1 == hub
+        2 == federate
+      */
+			in GeRtiFactory::GeRtiHandle sourceType,
+      // For federates.
+			in GeRtiFactory::GeRtiHandle sourceId,
+      // For hubs.
+			in wstring sourceName,
+			in boolean reliableFlag
+			)
+		raises (GeRtiFactory::ObjectClassNotDefined);
+	};
+
+  interface EventChannel {
+    ConsumerAdmin for_consumers();
+    SupplierAdmin for_suppliers();
+    void destroy();
+  };
+
+	struct HubEventChannelData {
+		GeRtiFactory::EventChannel eventChannelReference;
+		wstring name;
+	};
+
+	typedef sequence <HubEventChannelData> HubEventChannelDataSeq;
+
+	interface EventHubFederation {
+    /* Gets the event channel admins for a particular federation within the Event Hub.
+       Called by federate.
+     */
+    void getEventChannelAdmins (
+			out GeRtiFactory::EventChannel eventChannelReference,
+      out GeRtiFactory::TimeManagement theTimeManagement
+      )
+		raises (RTIinternalError);
+			
+    /* Called by gerti process to tell a hub which event 
+     */
+    void makeEventHubChannels (
+			in GeRtiFactory::HubEventChannelDataSeq theHubEventChannelDataSeq
+      )
+		raises (RTIinternalError);
+	};
+
+	interface TheEventHubFederationFactory {
+		/* The Event Hub Factory creates the requested federation resources within the Event Hub.
+		 */
+		void createFederationExecution (
+			in wstring fedName,
+			in GeRtiFactory::GeRtiHandle momInteractionRoot,
+			in GeRtiFactory::GeRtiHandle momObjectRoot,
+			in GeRtiFactory::GeRtiHandle interactionRoot,
+			in GeRtiFactory::GeRtiHandle objectRoot,
+			in GeRtiFactory::GeRtiHandle privilegeToDeleteId,
+      out GeRtiFactory::EventHubFederation theEventHubFederation,
+			out GeRtiFactory::EventChannel theEventChannelReference
+			)			
+		raises (FederationExecutionAlreadyExists,
+			RTIinternalError);
+
+    /* Destroys the federation resources within the Event Hub.
+     */
+		void destroyFederationExecution (
+			in wstring fedName
+			)			
+		raises (FederatesCurrentlyJoined,
+			FederationExecutionDoesNotExist,
+                        ConcurrentAccessAttempted,
+                        RTIinternalError);
+	};
+
+	interface FederationManagement {
+		/* 
+		@roseuid 3A07DC78037A */
+		GeRtiFactory::GeRtiHandle joinFederationExecution (
+			in wstring federateType,
+			in wstring eventHubName,
+			in FederateAmbassador federateAmbassadorReference,
+			in GeRtiRestore geRtiRestoreReference,
+      out EventHubFederation myEventHubFederation
+			)
+		raises (
+			FederateAlreadyExecutionMember,
+			FederationExecutionDoesNotExist,
+			CouldNotOpenFED,
+			ErrorReadingFED,
+			ConcurrentAccessAttempted,
+			SaveInProgress,
+			RestoreInProgress,
+			RTIinternalError);
+
+		void getMom (
+			out GeRtiFactory::Handles momHandles
+			)
+		raises (
+			ErrorReadingFED);
+
+                void joinFederationExecutionFinished (
+                        in GeRtiFactory::GeRtiHandle federate
+                        );
+
+        GeRtiFactory::GeRtiAmbassador getGeRtiAmbassador (
+            in GeRtiFactory::GeRtiHandle theHandle);
+
+		/* 
+		@roseuid 3A0A8066029F */
+		void resignFederationExecution (
+			in ResignAction theAction,
+			in GeRtiFactory::GeRtiHandle federate
+			)
+		raises (FederateOwnsAttributes,
+			FederateNotExecutionMember,
+			InvalidResignAction,
+			ConcurrentAccessAttempted,
+			RTIinternalError);
+			
+		void destroyFederationExecution (
+			in wstring fedName
+			)			
+		raises (FederatesCurrentlyJoined,
+			FederationExecutionDoesNotExist,
+                        ConcurrentAccessAttempted,
+                        RTIinternalError);
+
+		/* 
+		@roseuid 3A0A81BC005D */
+		void terminate ();
+	};
+
+	interface TheFactory {
+		/* The Factory creates the requested Federtion by creating a FederationManagement Object and by binding this
+       object into a newly created NamingContext associated with the new federation.
+		 */
+		void createFederationExecution (
+			in wstring fedName,
+			in wstring fedFile
+			)			
+		raises (FederationExecutionAlreadyExists,
+			CouldNotOpenFED,
+			ErrorReadingFED,
+			ConcurrentAccessAttempted,
+			RTIinternalError);
+			
+    GeRtiFactory::FederationManagement getFederationManagement (
+      in wstring fedName)
+		raises (FederationExecutionDoesNotExist,
+			ConcurrentAccessAttempted,
+			RTIinternalError);
+
+    /* The Factory provides a register method for the event hubs.
+		 */
+    void registerEventHubFactory (
+			in wstring hubName,
+			in TheEventHubFederationFactory geRtiEventHubFederationFactory
+      )
+      raises (EventHubAlreadyExists,
+			RTIinternalError);
+	};
+};
+
+#endif

@@ -1,0 +1,2 @@
+cd $GERTICO/bin
+gerti

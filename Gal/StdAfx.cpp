@@ -1,0 +1,8 @@
+// stdafx.cpp : Quelltextdatei, die nur die Standard-Includes einbindet
+//	gal.pch ist die vorkompilierte Header-Datei
+//	stdafx.obj enthält die vorkompilierte Typinformation
+
+#include "StdAfx.h"
+
+// ZU ERLEDIGEN: Verweis auf alle zusätzlichen Header-Dateien, die Sie in STDAFX.H
+// und nicht in dieser Datei benötigen

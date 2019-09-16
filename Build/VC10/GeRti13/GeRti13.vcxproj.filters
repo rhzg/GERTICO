@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GeRti">
+      <UniqueIdentifier>{fe22392e-ae5a-4f77-87d1-e58dc9235068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EventMarket">
+      <UniqueIdentifier>{c340feca-b1c8-4c0f-84a3-74e811152f4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{4dee0714-be34-43ed-8f74-ca3961472ad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeRtiTime">
+      <UniqueIdentifier>{98b518ef-2675-490a-8cea-6d6c133eea30}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\GeRti\DataDistributionManagement.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\DeclarationManagement.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\FederationManagement.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\GeRtiAmbassadorI.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\GeRtiFactoryI.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\GeRtiOwnershipMasterI.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\main.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\ManagementObjectModel.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\ObjectManagement.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\OwnershipWorkerThread.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\SupportingServices.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\SyncPointHandler.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRti\TimeClient.cpp">
+      <Filter>GeRti</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EventMarket\EventHandler.cpp">
+      <Filter>EventMarket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EventMarket\GeRtiEventAdminI.cpp">
+      <Filter>EventMarket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EventMarket\GeRtiEventMarketI.cpp">
+      <Filter>EventMarket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EventMarket\Interaction.cpp">
+      <Filter>EventMarket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\EventMarket\Publisher.cpp">
+      <Filter>EventMarket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\ClassDescr.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\ConvertTime.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\DataModel.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Exception.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Fed.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Federate.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\FedParser.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\GERTICOconfImpl.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\GeRtiFedTimeI.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\GeRtiOrb.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\HLAparseErrorHandler.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Item.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\JobHolder.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Jobs.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Mapper.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\NextHandle.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\PrintErrorHandler.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\PrintFilter.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Region.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\RegisteredObject.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\RunTimeObjectDB.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Space.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Subscriber.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRtiTime\TimeServiceFacI.cpp">
+      <Filter>GeRtiTime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRtiTime\TimeServiceI.cpp">
+      <Filter>GeRtiTime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\GeRtiTime\TokenHolder.cpp">
+      <Filter>GeRtiTime</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\GeRti\DataDistributionManagement.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\DeclarationManagement.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\FederationManagement.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\GeRtiAmbassadorI.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\GeRtiFactoryI.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\GeRtiOwnershipMasterI.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\main.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\ManagementObjectModel.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\Mom.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\ObjectManagement.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\OwnershipWorkerThread.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\SupportingServices.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\SyncPointHandler.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRti\TimeClient.h">
+      <Filter>GeRti</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EventMarket\EventHandler.h">
+      <Filter>EventMarket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EventMarket\GeRtiEventAdminI.h">
+      <Filter>EventMarket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EventMarket\GeRtiEventMarketI.h">
+      <Filter>EventMarket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EventMarket\Interaction.h">
+      <Filter>EventMarket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\EventMarket\Publisher.h">
+      <Filter>EventMarket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\ClassDescr.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\ClassInfo.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\ConvertTime.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\DataModel.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Exception.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Fed.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Federate.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\FedParser.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GERTICOconf.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GERTICOconfImpl.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GeRtiFedTime.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GeRtiFedTimeI.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GeRtiOrb.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GeRtiTypes.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\HandleSet.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\HLAparseErrorHandler.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Item.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\JobHolder.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Jobs.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Mapper.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\NextHandle.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\PrintErrorHandler.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\PrintFilter.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Region.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\RegisteredObject.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\RunTimeObjectDB.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Space.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Subscriber.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\XercesInclude.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRtiTime\TimeService.h">
+      <Filter>GeRtiTime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRtiTime\TimeServiceFac.h">
+      <Filter>GeRtiTime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRtiTime\TimeServiceFacI.h">
+      <Filter>GeRtiTime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRtiTime\TimeServiceI.h">
+      <Filter>GeRtiTime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\GeRtiTime\TokenHolder.h">
+      <Filter>GeRtiTime</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,60 @@
+# ----------------------------------------------------------------------------
+#
+# Copyright (c) Fraunhofer IITB
+# All rights reserved.
+#
+# ----------------------------------------------------------------------------
+
+include $(GERTICO)/config.incl 
+
+
+INC = -I$(ACE_ROOT) \
+	-I$(ACE_ROOT)/TAO \
+	-I$(ACE_ROOT)/TAO/orbsvcs \
+	-I$(ACE_ROOT)/TAO/orbsvcs/orbsvcs \
+	-I$(GERTICO) \
+	-I${XERCESCROOT}/include \
+	-I$(GERTICO)/include/RTI_1516
+
+LIB_A = $(GERTICO)/lib/libTAO.so \
+	$(GERTICO)/lib/libTAO_CosNaming.so \
+	$(GERTICO)/lib/libTAO_Messaging.so \
+	$(GERTICO)/lib/libTAO_PortableServer.so \
+	$(GERTICO)/lib/libTAO_Valuetype.so \
+	$(GERTICO)/lib/libACE.so \
+	$(GERTICO)/GeRtiTime/libgerti1516tm.a \
+	$(GERTICO)/EventMarket/libgerti1516em.a \
+	$(XERCESCROOT)/lib/libxerces-c.so \
+	$(GERTICO)/idl/librtiidl.a \
+	$(GERTICO)/Gal/libgal.a \
+	$(GERTICO)/lib/libfedtime1516.so \
+	$(GERTICO)/Util/libgerti1516ut.a
+
+OBJ =	DataDistributionManagement.o \
+	DeclarationManagement.o \
+	FederationManagement.o \
+	GeRtiAmbassadorI.o \
+	GeRtiFactoryI.o \
+	GeRtiOwnershipMasterI.o \
+	ManagementObjectModel1516.o \
+	ObjectManagement.o \
+	OwnershipWorkerThread.o \
+	SupportingServices.o \
+	SyncPointHandler.o \
+	main.o
+
+.cpp.o:
+	g++ $(FLAGS) -DIEEE_1516 -c $< $(INC)
+
+all: $(GERTICO)/bin/gerti1516
+
+$(GERTICO)/bin/gerti1516: $(OBJ) ${LIB_A}
+	$(CXX) $(LDFLAGS) -o $(GERTICO)/bin/gerti1516 $(OBJ) $(LIB_A)
+
+clean:
+	rm -f $(OBJ) $(GERTICO)/bin/gerti1516 dependencies.incl
+
+dependencies.incl:
+	$(CXX) $(FLAGS) $(INC) -MM *.cpp >$@
+ 
+include dependencies.incl

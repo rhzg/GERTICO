@@ -1,0 +1,46 @@
+General
+-------
+The official High Level Architecture Interface Specification is not very detailed in respect to the specific behaviour of the various services. An implementator may work according to a consistent concept (according to a possible imterpretation of HLA), but this may not match the concept used by the writers of the test system.
+
+The exact interpretation of the standard seems to only exist in the test cases - these are not generally available to an implementaor. In many test cases, the expected behaviour is quite arbitrary. Thus considerable effort may be required to align the implementation to the test caes.
+
+Specific
+--------
+
+1) Order of exceptions expected defined in the test case - Save/Restore-InProgress highest.
+
+2) Default values of Advisory switches - some true / some false - not defined in the standard.
+
+3) Request Federation Save - Time has alread passed / invalid time. In other services invalid time is used.
+
+4) Save with time much more logic than expected when reading the standard.
+
+5) registerObjectInstance - what error to throw when name prefix is "HLA"
+
+6) unconditionalAttributeOwnershipDivesture - attributes expected as a group per federate - not individually.
+
+7) resignFederationExecution - logic unclear: if release attributes means ALL attributes including, then cannot delete any objects afterwards!!
+
+8) sendInteraction with no attributes is allowed and wanted!!
+
+9) unconditionalOwnershipAttributeDivesture has to check subscribe logic.
+
+10) timeAdvancement for time-regulating, but not constrained is instant.
+
+11) Logic that the most recent save is the only save that will be done is not the only interpretation of the service. Doing each timed-save when scheduled seems more sensible.
+
+12) Name of FedTime library is not standard - at least release/debug names should be specified.
+
+13) Usage of the flags receive/timestamp in the fed file means that an update can result in two reflects in a federate. This is not clear in the specification.
+
+14) Test case 10-10-1-3 an OBJECT class handle is used in getInteractionRoutingSpaceHandle. Gerti throws INTERACTION class not defined and gets "Failed with reason: Exception thrown -- May not be an error". Gerti cannot pass this test case!
+
+15) Test case 10-10-1-4 same as 14)
+
+16) If advisory switches are disabled, eg. disableInteractionRelevanceAdvisorySwitch and then enabled enableInteractionRelevanceAdvisorySwitch again, then all Interactions that were advised in the disabled phase are expected to be implicitly turned on.
+
+17) Request for an object attribute update is allowed even though the federate is not subscribed to the class.
+
+18) Request for an object attribute update is also sent to the caller of this service even if it owns one or more of the attributes.
+
+19) If privilegeToDelete is included in various callback-services.

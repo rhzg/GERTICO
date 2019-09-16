@@ -1,0 +1,153 @@
+#ifndef MULTITREE_
+#define MULTITREE_
+#include <stack>
+//using namespace std;         //introduces namespace std
+template <class T> class multitree {
+public:
+  class node_iterator;
+  typedef multitree*                          node_ptr;
+  typedef T                              value_type;
+  typedef T*                             value_ptr;
+  // definitions 
+//private:
+  node_ptr parent_, prev_, next_, first_, last_;
+  value_type data_;
+
+  // constructors
+public:
+  multitree() : parent_(0), prev_(0), next_(0), first_(0), last_(0), data_(T()) {}
+  multitree(value_type x): parent_(0), prev_(0), next_(0), first_(0), last_(0), data_(x) {}
+  multitree(node_ptr p, node_ptr pr,node_ptr n,node_ptr f,node_ptr l, value_type x) 
+       : parent_(p), prev_(pr), next_(n), first_(f), last_(l), data_(x) {}
+  ~multitree(void) {while (first_)
+                     {
+                       node_ptr curr;
+                       curr = first_;
+                       prune (curr);
+                       delete curr;
+                     }
+                   };
+ 
+  node_iterator add_child(value_type x) {  // Add a child.
+    node_ptr newnode = new multitree(this, last_, 0, 0, 0, x); 
+   if (first_) last_->next_ =  newnode;
+   else first_ = newnode;
+   last_ = newnode;
+    return node_iterator(newnode); 
+  }
+  node_iterator add_child(node_iterator i, value_type x) {  // Add  a child.
+    node_ptr newnode = new multitree(i.current, i.current->last_, 0, 0, 0, x); 
+   if (i.current->first_) i.current->last_->next_ =  newnode;
+   else i.current->first_ = newnode;
+   i.current->last_ = newnode;
+    return node_iterator(newnode); 
+  }
+  node_iterator graft_after(const node_iterator& i, multitree& m) { //grafts the specified node m as the sibling after i
+    if (m.parent_) {  // m is already in a tree, I must prune it from its current tree
+      m.prune();
+    } 
+    if (i.current->parent_) {
+      m.parent_ = i.current->parent_;
+      m.prev_ = i.current;
+      m.next_ = i.current->next_;
+      if (m.next_) m.next_->prev_ = &m;
+      else  m.parent_->last_ = &m;
+      i.current->next_ = &m;
+    } else throw "Error Grafting multitree, no root";
+    return node_iterator(&m);
+  }
+  void prune(node_ptr child){ // remove this node from its current tree and tidy up
+    if (child->parent_) { 
+      if (child->next_) child->next_->prev_ = child->prev_;
+      else child->parent_->last_= child->prev_;
+      if (child->prev_) child->prev_->next_ = child->next_;
+      else child->parent_->first_ = child->next_;
+      child->parent_ = 0;
+    }
+    child->next_= 0;
+    child->prev_= 0;
+  }
+  node_iterator begin() {   // The begin condition is an empty stack and current node = root of the iterator
+    return node_iterator(this);
+  }
+  node_iterator end() {  // The past end condition is current node == NULL and stack with one entry, with ci = end(), and n=root
+    return node_iterator(this, NULL);
+  }
+  node_iterator root() {   // find the root of my tree and return an iterator to it
+    node_ptr temp = this;
+    while (temp->parent_) temp = temp->parent_;
+    return node_iterator(temp);
+  }
+
+  class node_iterator {      //  the current node is always the topmost node_ptr
+  public:
+    friend class multitree;
+    node_ptr root;  //root node	of the subtree described by this iterator
+    node_ptr current;  //current node
+    node_iterator() {} 
+    //node_iterator(const multitree::node_iterator& i) :root(i.root), current(i.current){}  
+    node_iterator(const node_ptr n) : root(n) , current(n){}  // make an iterator which will give you a subtree at n
+    node_iterator(const node_ptr n, const node_ptr c) : root(n), current(c) {}  // make an iterator which will give you a subtree at n, but beginning with the ci'th child
+    
+    value_type operator * () {  return current->data_;}
+    value_ptr operator -> () {  return &current->data_;}
+
+    node_iterator& operator++() {
+      if (current) {
+        if (current->first_) {
+          current = current->first_;
+          // cout << " down " << endl;
+        } else {
+          while ((current != root) && !current->next_) {
+            current = current->parent_;
+            // cout << " up " << endl;
+          }
+          if (current != root) {
+            current = current->next_;
+            // cout << " over " << endl;
+          } else current = NULL;
+        }
+      }
+      return *this;  
+    }  
+    node_iterator& operator++(int) {
+      if (current)
+      {
+        if (current->next_)
+        {
+          current = current->next_;
+        }
+        else
+        {
+          current = NULL;
+        }
+      }
+      return *this;  
+    }  
+    node_iterator& operator--() {
+      if (current) {  
+        if (current->prev_  && (current !=root)) {
+          current = current->prev_;
+          while (current->last_) current = current->last_;
+        } else if (current != root) current = current->parent_;
+      } else {  // special case of past end condition.
+        current = root;
+        while (current->last_) current = current->last_;
+      }
+      return *this;  
+    }  
+    node_iterator& reroot() {
+      if (current) root = current;;
+      return *this;  
+    }  
+    bool valid() { return (current != NULL);}
+    friend bool operator == (const node_iterator x,const node_iterator& y) {
+      return ( x.current == y.current) ;
+    }
+    friend bool operator != (const node_iterator x,const node_iterator& y) {
+      return ( x.current != y.current) ;
+    }
+  };
+};
+
+#endif

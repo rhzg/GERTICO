@@ -1,0 +1,40 @@
+# ----------------------------------------------------------------------------
+#
+# Copyright (c) Fraunhofer IITB
+# All rights reserved.
+#
+# ----------------------------------------------------------------------------
+
+include $(GERTICO)/config.incl 
+
+
+INC = -I$(ACE_ROOT)/TAO/orbsvcs \
+	-I$(ACE_ROOT) \
+	-I$(ACE_ROOT)/TAO \
+	-I${XERCESCROOT}/include \
+	-I$(GERTICO) \
+	-I$(GERTICO)/include/RTI_1516
+
+OBJ =	EventHandler.o \
+	GeRtiEventMarketI.o \
+	Interaction.o \
+	Publisher.o \
+	TimeClient.o
+
+.cpp.o:
+	g++ $(FLAGS) -DIEEE_1516 -c $< $(INC)
+
+all: libgerti1516em.a 
+
+install: 
+
+clean:
+	rm -f $(OBJ) libgerti1516em.a dependencies.incl
+
+libgerti1516em.a: $(OBJ)
+	ar cr libgerti1516em.a $(OBJ)
+
+dependencies.incl:
+	$(CXX) $(FLAGS) $(INC) -MM *.cpp >$@
+ 
+include dependencies.incl

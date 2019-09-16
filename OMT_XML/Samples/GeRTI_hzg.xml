@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE objectModel SYSTEM "HLA.dtd">
+<GERTICO >
+	<NamingService>
+		<endPoint>iiop://pc21.iitb.fhg.de:3000</endPoint>
+		<rootEntry>GeRTI</rootEntry>
+	</NamingService>
+	<DTDfile>unused</DTDfile>
+	<ModelPath>H:\Projekte\Laufende\GERTICO\SW\work\GeRti; H:\Projekte\Laufende\GERTICO\SW\work\OMT_XML\Samples</ModelPath>
+</GERTICO>

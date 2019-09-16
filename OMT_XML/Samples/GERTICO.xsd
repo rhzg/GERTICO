@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Reinhard Herzog (Fraunhofer Institut IITB) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="GERTICO">
+		<xs:annotation>
+			<xs:documentation>Configuration file description</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NamingService">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="endPoint"/>
+							<xs:element name="rootEntry"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DTDfile">
+					<xs:annotation>
+						<xs:documentation>absolute path to dtd file</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ModelPath" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>sequence of path names where the omt files will be searched</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

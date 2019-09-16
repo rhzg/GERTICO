@@ -1,0 +1,11 @@
+version=1.0
+id=fkt2
+nrLogger=1
+id=lxy enable=1 level=D group=ff ctxt="L2.1"
+nrObserver=0
+nrFormat=0
+nrEvent=3
+id=ex enable=1 level=W group=1 idLogger=lx idFormat=fx ctxt="E2.1" 
+id=exy enable=1 level=I group=0 idLogger=lx idFormat=fx ctxt="E2.2" 
+id=exyz enable=1 level=I group=0 idLogger=lx idFormat=fx ctxt="E2.3" 
+

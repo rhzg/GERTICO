@@ -1,0 +1,13 @@
+cp RES/AnSynPtHandler.conv ../LRC/HLASpec/AnSynPtHandler.cpp
+cp RES/CoSynPtHandler.conv ../LRC/HLASpec/CoSynPtHandler.cpp
+cp RES/DiscoverHandler.conv ../LRC/HLASpec/DiscoverHandler.cpp
+cp RES/EventHandler.conv ../LRC/HLASpec/EventHandler.cpp
+cp RES/FedSyncHandler.conv ../LRC/HLASpec/FedSyncHandler.cpp
+cp RES/InterPubOnHandler.conv ../LRC/HLASpec/InterPubOnHandler.cpp
+cp RES/ObjPubOnHandler.conv ../LRC/HLASpec/ObjPubOnHandler.cpp
+cp RES/ProvideHandler.conv ../LRC/HLASpec/ProvideHandler.cpp
+cp RES/RTIambServices.conv ../LRC/HLASpec/RTIambServices.cpp
+cp RES/RemoveHandler.conv ../LRC/HLASpec/RemoveHandler.cpp
+cp RES/RemoveWithTimeHandler.conv ../LRC/HLASpec/RemoveWithTimeHandler.cpp
+cp RES/StartRegHandler.conv ../LRC/HLASpec/StartRegHandler.cpp
+cp RES/*.res ../GalRes

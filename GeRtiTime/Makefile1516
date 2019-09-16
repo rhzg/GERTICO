@@ -1,0 +1,43 @@
+include $(GERTICO)/config.incl
+
+INC = -I$(ACE_ROOT)/TAO/orbsvcs \
+	-I$(ACE_ROOT) \
+	-I$(ACE_ROOT)/TAO \
+	-I$(GERTICO) \
+	-I${XERCESCROOT}/include \
+	-I$(GERTICO)/include/RTI_1516
+
+LIB =	$(ACE_ROOT)/ace/libTAO.so \
+	$(ACE_ROOT)/ace/libACE.so \
+	$(ACE_ROOT)/ace/libTAO_CosNaming.so \
+	$(GERTICO)/OMT_XML/libOMT_XML.a \
+	$(XERCESCROOT)/lib/libxerces-c.so \
+	$(GERTICO)/idl/librtiidl.a \
+	$(GERTICO)/Util/libgertiut.a \
+	$(GERTICO)/FedTime/$(FEDTIMELIB) \
+	$(GERTICO)/RTI_Exceptions/libRTI_Exceptions.a
+
+OBJ =	TimeServiceFacI.o \
+	TimeManagementI.o \
+	TokenHolder.o
+
+.cpp.o:
+	g++ $(FLAGS) -DIEEE_1516 -c $< $(INC)
+
+all: libgerti1516tm.a
+
+install: $(GERTICO)/lib/libgerti1516tm.a
+
+$(GERTICO)/lib/libgerti1516tm.a: libgerti1516tm.a
+	cp libgerti1516tm.a $(GERTICO)/lib
+
+clean:
+	rm -f $(OBJ) libgerti1516tm.a TimeClient.o $(IDL_OBJ) dependencies.incl
+
+libgerti1516tm.a: $(OBJ)
+	ar cr libgerti1516tm.a $(OBJ)
+
+dependencies.incl:
+	g++ $(FLAGS) $(INC) -MM *.cpp >$@
+ 
+include dependencies.incl

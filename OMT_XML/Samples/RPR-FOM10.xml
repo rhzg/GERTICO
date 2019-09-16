@@ -1,0 +1,685 @@
+<?xml version="1.0"?>
+<!-- edited with XML Spy v3.0.7 NT (http://www.xmlspy.com) by Reinhard Herzog (TES) -->
+<!DOCTYPE objectModel SYSTEM "HLA.dtd">
+<objectModel DTDversion="1516.2" name="FederationName" nameNotes="xxx" type="FOM" typeNotes="xxx" version="1.0" versionNotes="xxx" date="xxx" dateNotes="xxx" purpose="R&amp;D Project: Standard Interface for Simulation Applications SISA" purposeNotes="xxx" appDomain="tutorial" appDomainNotes="xxx" sponsor="xxx" sponsorNotes="xxx" pocName="xxx" pocNameNotes="xxx" pocOrg="xxx" pocOrgNotes="xxx" pocPhone="xxx" pocPhoneNotes="xxx" pocEmail="xxx" pocEmailNotes="xxx" references="xxx" referencesNotes="xxx" other="xxx" otherNotes="xxx">
+	<objects>
+		<objectClass name="HLAobjectRoot">
+		     <attribute name="HLAprivilegeToDeleteObject"/>
+			<objectClass name="BaseEntity">
+				<attribute name="AccelerationVector"/>
+				<attribute name="AngularVelocityVector"/>
+				<attribute name="DeadReckoningAlgorithm"/>
+				<attribute name="EntityType"/>
+				<attribute name="EntityIdentifier"/>
+				<attribute name="IsFrozen"/>
+				<attribute name="Orientation"/>
+				<attribute name="WorldLocation"/>
+				<attribute name="VelocityVector"/>
+				<objectClass name="EnvironmentalEntity">
+					<attribute name="OpacityCode"/>
+				</objectClass>
+				<objectClass name="PhysicalEntity">
+					<attribute name="AlternateEntityType"/>
+					<attribute name="ArticulatedParametersArray"/>
+					<attribute name="CamouflageType"/>
+					<attribute name="DamageState"/>
+					<attribute name="EngineSmokeOn"/>
+					<attribute name="FirePowerDisabled"/>
+					<attribute name="FlamesPresent"/>
+					<attribute name="ForceIdentifier"/>
+					<attribute name="HasAmmunitionSupplyCap"/>
+					<attribute name="HasFuelSupplyCap"/>
+					<attribute name="HasRecoveryCap"/>
+					<attribute name="HasRepairCap"/>
+					<attribute name="Immobilized"/>
+					<attribute name="IsConcealed"/>
+					<attribute name="Marking"/>
+					<attribute name="PowerPlantOn"/>
+					<attribute name="SmokePlumePresent"/>
+					<attribute name="TentDeployed"/>
+					<attribute name="TrailingEffectsCode"/>
+					<objectClass name="Platform">
+						<attribute name="AfterburnerOn"/>
+						<attribute name="AntiCollisionLightsOn"/>
+						<attribute name="BlackOutBrakeLightsOn"/>
+						<attribute name="BlackOutLightsOn"/>
+						<attribute name="BrakeLightsOn"/>
+						<attribute name="FormationLightsOn"/>
+						<attribute name="HatchState"/>
+						<attribute name="HeadLightsOn"/>
+						<attribute name="InteriorLightsOn"/>
+						<attribute name="LandingLightsOn"/>
+						<attribute name="LauncherRaised"/>
+						<attribute name="NavigationLightsOn"/>
+						<attribute name="RampDeployed"/>
+						<attribute name="RunningLightsOn"/>
+						<attribute name="SpotLightsOn"/>
+						<attribute name="TailLightsOn"/>
+						<objectClass name="Aircraft"/>
+						<objectClass name="AmphibiousVehicle"/>
+						<objectClass name="GroundVehicle"/>
+						<objectClass name="MultiDomainPlatform"/>
+						<objectClass name="Spacecraft"/>
+						<objectClass name="SubmersibleVessel"/>
+						<objectClass name="SurfaceVessel"/>
+					</objectClass>
+					<objectClass name="Lifeform">
+						<attribute name="FlashLightsOn"/>
+						<attribute name="StanceCode"/>
+						<attribute name="PrimaryWeaponState"/>
+						<attribute name="SecondaryWeaponState"/>
+						<objectClass name="Human"/>
+						<objectClass name="NonHuman"/>
+					</objectClass>
+					<objectClass name="CulturalFeature">
+						<attribute name="ExternalLightsOn"/>
+						<attribute name="InternalHeatSourceOn"/>
+						<attribute name="InternalLightsOn"/>
+					</objectClass>
+					<objectClass name="Expendables"/>
+					<objectClass name="Munition">
+						<attribute name="LauncherFlashPresent"/>
+					</objectClass>
+					<objectClass name="Radio"/>
+					<objectClass name="Sensor">
+						<attribute name="AntennaRaised"/>
+						<attribute name="BlackoutLightsOn"/>
+						<attribute name="LightsOn"/>
+						<attribute name="InteriorLightsOn"/>
+						<attribute name="MissionKill"/>
+					</objectClass>
+					<objectClass name="Supplies"/>
+				</objectClass>
+			</objectClass>
+			<objectClass name="EmbeddedSystem">
+				<attribute name="EntityIdentifier"/>
+				<attribute name="HostObjectIdentifier"/>
+				<attribute name="RelativePosition"/>
+				<objectClass name="Designator">
+					<attribute name="CodeName"/>
+					<attribute name="DesignatedObjectIdentifier"/>
+					<attribute name="DesignatorCode"/>
+					<attribute name="DesignatorEmissionWavelength"/>
+					<attribute name="DesignatorOutputPower"/>
+					<attribute name="DesignatorSpotLocation"/>
+					<attribute name="DeadReckoningAlgorithm"/>
+					<attribute name="RelativeSpotLocation"/>
+					<attribute name="SpotLinearAccelerationVector"/>
+				</objectClass>
+				<objectClass name="EmitterSystem">
+					<attribute name="EmitterFunctionCode"/>
+					<attribute name="EmitterType"/>
+					<attribute name="EmitterIndex"/>
+					<attribute name="EventIdentifier"/>
+				</objectClass>
+				<objectClass name="RadioReceiver">
+					<attribute name="RadioIndex"/>
+					<attribute name="ReceivedPower"/>
+					<attribute name="ReceivedTransmitterIdentifier"/>
+					<attribute name="ReceiverOperationalStatus"/>
+				</objectClass>
+				<objectClass name="RadioTransmitter">
+					<attribute name="AntennaPatternData"/>
+					<attribute name="CryptographicMode"/>
+					<attribute name="CryptoSystem"/>
+					<attribute name="EncryptionKeyIdentifier"/>
+					<attribute name="Frequency"/>
+					<attribute name="FrequencyBandwidth"/>
+					<attribute name="FrequencyHopInUse"/>
+					<attribute name="ModulationParameters"/>
+					<attribute name="PsuedoNoiseSpectrumInUse"/>
+					<attribute name="RadioIndex"/>
+					<attribute name="RadioInputSource"/>
+					<attribute name="RadioSystemType"/>
+					<attribute name="RFModulationSystemType"/>
+					<attribute name="RFModulationType"/>
+					<attribute name="TimeHopInUse"/>
+					<attribute name="TransmittedPower"/>
+					<attribute name="TransmitterOperationalStatus"/>
+					<attribute name="WorldLocation"/>
+				</objectClass>
+			</objectClass>
+			<objectClass name="EmitterBeam">
+				<attribute name="BeamAzimuthCenter"/>
+				<attribute name="BeamAzimuthSweep"/>
+				<attribute name="BeamElevationCenter"/>
+				<attribute name="BeamElevationSweep"/>
+				<attribute name="BeamFunctionCode"/>
+				<attribute name="BeamIdentifier"/>
+				<attribute name="BeamParameterIndex"/>
+				<attribute name="EffectiveRadiatedPower"/>
+				<attribute name="EmissionFrequency"/>
+				<attribute name="EmitterSystemIdentifier"/>
+				<attribute name="EventIdentifier"/>
+				<attribute name="FrequencyRange"/>
+				<attribute name="PulseRepetitionFrequency"/>
+				<attribute name="PulseWidth"/>
+				<attribute name="SweepSynch"/>
+				<objectClass name="RadarBeam">
+					<attribute name="HighDensityTrack"/>
+					<attribute name="TrackObjectIdentifiers"/>
+				</objectClass>
+				<objectClass name="JammerBeam">
+					<attribute name="JammingModeSequence"/>
+					<attribute name="JammedObjectIdentifiers"/>
+					<attribute name="HighDensityJam"/>
+				</objectClass>
+			</objectClass>
+			<objectClass name="Manager">
+				<objectClass name="Federation">
+					<attribute name="FederationName"/>
+					<attribute name="FederatesInFederation"/>
+					<attribute name="RTIversion"/>
+					<attribute name="FEDid"/>
+					<attribute name="LastSaveName"/>
+					<attribute name="LastSaveTime"/>
+					<attribute name="NextSaveName"/>
+					<attribute name="NextSaveTime"/>
+				</objectClass>
+				<objectClass name="Federate">
+					<attribute name="FederateHandle"/>
+					<attribute name="FederateType"/>
+					<attribute name="FederateHost"/>
+					<attribute name="RTIversion"/>
+					<attribute name="FEDid"/>
+					<attribute name="TimeConstrained"/>
+					<attribute name="TimeRegulating"/>
+					<attribute name="AsynchronousDelivery"/>
+					<attribute name="FederateState"/>
+					<attribute name="TimeManagerState"/>
+					<attribute name="FederateTime"/>
+					<attribute name="Lookahead"/>
+					<attribute name="LBTS"/>
+					<attribute name="MinNextEventTime"/>
+					<attribute name="ROlength"/>
+					<attribute name="TSOlength"/>
+					<attribute name="ReflectionsReceived"/>
+					<attribute name="UpdatesSent"/>
+					<attribute name="InteractionsReceived"/>
+					<attribute name="InteractionsSent"/>
+					<attribute name="ObjectsOwned"/>
+					<attribute name="ObjectsUpdated"/>
+					<attribute name="ObjectsReflected"/>
+				</objectClass>
+			</objectClass>
+		</objectClass>
+	</objects>
+	<interactions>
+		<interactionClass name="HLAinteractionRoot">
+			<interactionClass name="Acknowledge">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+				<parameter name="AcknowledgeFlag"/>
+				<parameter name="ResponseFlag"/>
+			</interactionClass>
+			<interactionClass name="ActionRequest">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+				<parameter name="ActionRequestCode"/>
+				<parameter name="FixedDatums"/>
+				<parameter name="VariableDatumSet"/>
+			</interactionClass>
+			<interactionClass name="ActionResponse">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+				<parameter name="RequestStatus"/>
+				<parameter name="FixedDatums"/>
+				<parameter name="VariableDatumSet"/>
+			</interactionClass>
+			<interactionClass name="ActionRequestToObject">
+				<parameter name="ObjectIdentifiers"/>
+				<parameter name="ActionRequestCode"/>
+			</interactionClass>
+			<interactionClass name="ActionResponseFromObject">
+				<parameter name="ActionResult"/>
+			</interactionClass>
+			<interactionClass name="AttributeChangeRequest">
+				<parameter name="ObjectIdentifiers"/>
+				<parameter name="AttributeValueSet"/>
+			</interactionClass>
+			<interactionClass name="AttributeChangeResult">
+				<parameter name="ObjectIdentifier"/>
+				<parameter name="AttributeChangeResult"/>
+				<parameter name="AttributeValueSet"/>
+			</interactionClass>
+			<interactionClass name="Collision">
+				<parameter name="CollidingObjectIdentifier"/>
+				<parameter name="IssuingObjectMass"/>
+				<parameter name="IssuingObjectVelocityVector"/>
+				<parameter name="CollisionType"/>
+				<parameter name="CollisionLocation"/>
+				<parameter name="EventIdentifier"/>
+				<parameter name="IssuingObjectIdentifier"/>
+			</interactionClass>
+			<interactionClass name="Comment">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="VariableDatumSet"/>
+			</interactionClass>
+			<interactionClass name="CreateObjectRequest">
+				<parameter name="ObjectClass"/>
+				<parameter name="AttributeValueSet"/>
+				<parameter name="RequestIdentifier"/>
+			</interactionClass>
+			<interactionClass name="CreateObjectResult">
+				<parameter name="CreateObjectResult"/>
+				<parameter name="RequestIdentifier"/>
+			</interactionClass>
+			<interactionClass name="CreateEntity">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+			</interactionClass>
+			<interactionClass name="Data">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+				<parameter name="FixedDatums"/>
+				<parameter name="VariableDatumSet"/>
+			</interactionClass>
+			<interactionClass name="DataQuery">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+				<parameter name="TimeInterval"/>
+				<parameter name="FixedDatumIdentifiers"/>
+				<parameter name="VariableDatumIdentifiers"/>
+			</interactionClass>
+			<interactionClass name="EventReport">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="EventType"/>
+				<parameter name="FixedDatums"/>
+				<parameter name="VariableDatumSet"/>
+			</interactionClass>
+			<interactionClass name="MunitionDetonation">
+				<parameter name="ArticulatedPartData"/>
+				<parameter name="DetonationLocation"/>
+				<parameter name="DetonationResultCode"/>
+				<parameter name="EventIdentifier"/>
+				<parameter name="FiringObjectIdentifier"/>
+				<parameter name="FinalVelocityVector"/>
+				<parameter name="FuseType"/>
+				<parameter name="MunitionObjectIdentifier"/>
+				<parameter name="MunitionType"/>
+				<parameter name="QuantityFired"/>
+				<parameter name="RateOfFire"/>
+				<parameter name="RelativeDetonationLocation"/>
+				<parameter name="TargetObjectIdentifier"/>
+				<parameter name="WarheadType"/>
+			</interactionClass>
+			<interactionClass name="RadioSignal">
+				<interactionClass name="ApplicationSpecificRadioSignal">
+					<parameter name="HostRadioIndex"/>
+					<parameter name="DataRate"/>
+					<parameter name="SignalDataLength"/>
+					<parameter name="SignalData"/>
+					<parameter name="TacticalDataLinkType"/>
+					<parameter name="TDLMessageCount"/>
+					<parameter name="UserProtocolID"/>
+				</interactionClass>
+				<interactionClass name="DatabaseIndexRadioSignal">
+					<parameter name="HostRadioIndex"/>
+					<parameter name="DatabaseIndex"/>
+					<parameter name="Duration"/>
+					<parameter name="StartOffset"/>
+					<parameter name="TacticalDataLinkType"/>
+					<parameter name="TDLMessageCount"/>
+				</interactionClass>
+				<interactionClass name="EncodedAudioRadioSignal">
+					<parameter name="HostRadioIndex"/>
+					<parameter name="TransmitterSignalEncodingType"/>
+					<parameter name="SignalSampleRate"/>
+					<parameter name="SampleCount"/>
+					<parameter name="SignalDataLength"/>
+					<parameter name="SignalData"/>
+				</interactionClass>
+				<interactionClass name="RawBinaryRadioSignal">
+					<parameter name="HostRadioIndex"/>
+					<parameter name="DataRate"/>
+					<parameter name="SignalDataLength"/>
+					<parameter name="SignalData"/>
+					<parameter name="TacticalDataLinkType"/>
+					<parameter name="TDLMessageCount"/>
+				</interactionClass>
+			</interactionClass>
+			<interactionClass name="RemoveObjectRequest">
+				<parameter name="ObjectIdentifiers"/>
+				<parameter name="RequestIdentifier"/>
+			</interactionClass>
+			<interactionClass name="RemoveObjectResult">
+				<parameter name="RemoveObjectResult"/>
+				<parameter name="RequestIdentifier"/>
+			</interactionClass>
+			<interactionClass name="RemoveEntity">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+			</interactionClass>
+			<interactionClass name="RepairComplete">
+				<parameter name="ReceivingObject"/>
+				<parameter name="RepairingObject"/>
+				<parameter name="RepairType"/>
+			</interactionClass>
+			<interactionClass name="RepairResponse">
+				<parameter name="ReceivingObject"/>
+				<parameter name="RepairingObject"/>
+				<parameter name="RepairResultCode"/>
+			</interactionClass>
+			<interactionClass name="ResupplyCancel">
+				<parameter name="ReceivingObject"/>
+				<parameter name="SupplyingObject"/>
+			</interactionClass>
+			<interactionClass name="ResupplyOffer">
+				<parameter name="ReceivingObject"/>
+				<parameter name="SupplyingObject"/>
+				<parameter name="SuppliesData"/>
+			</interactionClass>
+			<interactionClass name="ResupplyReceived">
+				<parameter name="ReceivingObject"/>
+				<parameter name="SupplyingObject"/>
+				<parameter name="SuppliesData"/>
+			</interactionClass>
+			<interactionClass name="ServiceRequest">
+				<parameter name="RequestingObject"/>
+				<parameter name="ServicingObject"/>
+				<parameter name="ServiceType"/>
+				<parameter name="SuppliesData"/>
+			</interactionClass>
+			<interactionClass name="SetData">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+				<parameter name="FixedDatums"/>
+				<parameter name="VariableDatumSet"/>
+			</interactionClass>
+			<interactionClass name="StartResume">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+				<parameter name="RealWorldTime"/>
+				<parameter name="SimulationTime"/>
+			</interactionClass>
+			<interactionClass name="StopFreeze">
+				<parameter name="OriginatingEntity"/>
+				<parameter name="ReceivingEntity"/>
+				<parameter name="RequestIdentifier"/>
+				<parameter name="RealWorldTime"/>
+				<parameter name="Reason"/>
+				<parameter name="ReflectValues"/>
+				<parameter name="RunInternalSimulationClock"/>
+				<parameter name="UpdateAttributes"/>
+			</interactionClass>
+			<interactionClass name="WeaponFire">
+				<parameter name="EventIdentifier"/>
+				<parameter name="FireControlSolutionRange"/>
+				<parameter name="FireMissionIndex"/>
+				<parameter name="FiringLocation"/>
+				<parameter name="FiringObjectIdentifier"/>
+				<parameter name="FuseType"/>
+				<parameter name="InitialVelocityVector"/>
+				<parameter name="MunitionObjectIdentifier"/>
+				<parameter name="MunitionType"/>
+				<parameter name="QuantityFired"/>
+				<parameter name="RateOfFire"/>
+				<parameter name="TargetObjectIdentifier"/>
+				<parameter name="WarheadType"/>
+			</interactionClass>
+			<interactionClass name="Manager">
+				<interactionClass name="Federate">
+					<parameter name="Federate"/>
+					<interactionClass name="Request">
+						<interactionClass name="RequestPublications"/>
+						<interactionClass name="RequestSubscriptions"/>
+						<interactionClass name="RequestObjectsOwned"/>
+						<interactionClass name="RequestObjectsUpdated"/>
+						<interactionClass name="RequestObjectsReflected"/>
+						<interactionClass name="RequestUpdatesSent"/>
+						<interactionClass name="RequestInteractionsSent"/>
+						<interactionClass name="RequestReflectionsReceived"/>
+						<interactionClass name="RequestInteractionsReceived"/>
+						<interactionClass name="RequestObjectInformation">
+							<parameter name="ObjectInstance"/>
+						</interactionClass>
+					</interactionClass>
+					<interactionClass name="Report">
+						<interactionClass name="ReportObjectPublication">
+							<parameter name="NumberOfClasses"/>
+							<parameter name="ObjectClass"/>
+							<parameter name="AttributeList"/>
+						</interactionClass>
+						<interactionClass name="ReportObjectSubscription">
+							<parameter name="NumberOfClasses"/>
+							<parameter name="ObjectClass"/>
+							<parameter name="Active"/>
+							<parameter name="AttributeList"/>
+						</interactionClass>
+						<interactionClass name="ReportInteractionPublication">
+							<parameter name="InteractionClassList"/>
+						</interactionClass>
+						<interactionClass name="ReportInteractionSubscription">
+							<parameter name="InteractionClassList"/>
+						</interactionClass>
+						<interactionClass name="ReportObjectsOwned">
+							<parameter name="ObjectCounts"/>
+						</interactionClass>
+						<interactionClass name="ReportObjectsUpdated">
+							<parameter name="ObjectCounts"/>
+						</interactionClass>
+						<interactionClass name="ReportObjectsReflected">
+							<parameter name="ObjectCounts"/>
+						</interactionClass>
+						<interactionClass name="ReportUpdatesSent">
+							<parameter name="TransportationType"/>
+							<parameter name="UpdateCounts"/>
+						</interactionClass>
+						<interactionClass name="ReportReflectionsReceived">
+							<parameter name="TransportationType"/>
+							<parameter name="ReflectCounts"/>
+						</interactionClass>
+						<interactionClass name="ReportInteractionsSent">
+							<parameter name="TransportationType"/>
+							<parameter name="InteractionCounts"/>
+						</interactionClass>
+						<interactionClass name="ReportInteractionsReceived">
+							<parameter name="TransportationType"/>
+							<parameter name="InteractionCounts"/>
+						</interactionClass>
+						<interactionClass name="ReportObjectInformation">
+							<parameter name="ObjectInstance"/>
+							<parameter name="OwnedAttributeList"/>
+							<parameter name="RegisteredClass"/>
+							<parameter name="KnownClass"/>
+						</interactionClass>
+						<interactionClass name="Alert">
+							<parameter name="AlertSeverity"/>
+							<parameter name="AlertDescription"/>
+							<parameter name="AlertID"/>
+						</interactionClass>
+						<interactionClass name="ReportServiceInvocation">
+							<parameter name="Service"/>
+							<parameter name="Initiator"/>
+							<parameter name="SuccessIndicator"/>
+							<parameter name="SuppliedArgument1"/>
+							<parameter name="SuppliedArgument2"/>
+							<parameter name="SuppliedArgument3"/>
+							<parameter name="SuppliedArgument4"/>
+							<parameter name="SuppliedArgument5"/>
+							<parameter name="ReturnedArgument"/>
+							<parameter name="ExceptionDescription"/>
+							<parameter name="ExceptionID"/>
+						</interactionClass>
+					</interactionClass>
+					<interactionClass name="Adjust">
+						<interactionClass name="SetTiming">
+							<parameter name="ReportPeriod"/>
+						</interactionClass>
+						<interactionClass name="ModifyAttributeState">
+							<parameter name="ObjectInstance"/>
+							<parameter name="Attribute"/>
+							<parameter name="AttributeState"/>
+						</interactionClass>
+						<interactionClass name="SetServiceReporting">
+							<parameter name="ReportingState"/>
+						</interactionClass>
+						<interactionClass name="SetExceptionLogging">
+							<parameter name="LoggingState"/>
+						</interactionClass>
+					</interactionClass>
+					<interactionClass name="Service">
+						<interactionClass name="ResignFederationExecution">
+							<parameter name="ResignAction"/>
+						</interactionClass>
+						<interactionClass name="SynchronizationPointAchieved">
+							<parameter name="Label"/>
+						</interactionClass>
+						<interactionClass name="FederateSaveBegun"/>
+						<interactionClass name="FederateSaveComplete">
+							<parameter name="SuccessIndicator"/>
+						</interactionClass>
+						<interactionClass name="FederateRestoreComplete">
+							<parameter name="SuccessIndicator"/>
+						</interactionClass>
+						<interactionClass name="PublishObjectClass">
+							<parameter name="ObjectClass"/>
+							<parameter name="AttributeList"/>
+						</interactionClass>
+						<interactionClass name="UnpublishObjectClass">
+							<parameter name="ObjectClass"/>
+						</interactionClass>
+						<interactionClass name="PublishInteractionClass">
+							<parameter name="InteractionClass"/>
+						</interactionClass>
+						<interactionClass name="UnpublishInteractionClass">
+							<parameter name="InteractionClass"/>
+						</interactionClass>
+						<interactionClass name="SubscribeObjectClassAttributes">
+							<parameter name="ObjectClass"/>
+							<parameter name="AttributeList"/>
+							<parameter name="Active"/>
+						</interactionClass>
+						<interactionClass name="UnsubscribeObjectClass">
+							<parameter name="ObjectClass"/>
+						</interactionClass>
+						<interactionClass name="SubscribeInteractionClass">
+							<parameter name="InteractionClass"/>
+							<parameter name="Active"/>
+						</interactionClass>
+						<interactionClass name="UnsubscribeInteractionClass">
+							<parameter name="InteractionClass"/>
+						</interactionClass>
+						<interactionClass name="DeleteObjectInstance">
+							<parameter name="ObjectInstance"/>
+							<parameter name="Tag"/>
+							<parameter name="FederationTime"/>
+						</interactionClass>
+						<interactionClass name="LocalDeleteObjectInstance">
+							<parameter name="ObjectInstance"/>
+						</interactionClass>
+						<interactionClass name="ChangeAttributeTransportationType">
+							<parameter name="ObjectInstance"/>
+							<parameter name="AttributeList"/>
+							<parameter name="TransportationType"/>
+						</interactionClass>
+						<interactionClass name="ChangeAttributeOrderType">
+							<parameter name="ObjectInstance"/>
+							<parameter name="AttributeList"/>
+							<parameter name="OrderingType"/>
+						</interactionClass>
+						<interactionClass name="ChangeInteractionTransportationType">
+							<parameter name="InteractionClass"/>
+							<parameter name="TransportationType"/>
+						</interactionClass>
+						<interactionClass name="ChangeInteractionOrderType">
+							<parameter name="InteractionClass"/>
+							<parameter name="OrderingType"/>
+						</interactionClass>
+						<interactionClass name="UnconditionalAttributeOwnershipDivestiture">
+							<parameter name="ObjectInstance"/>
+							<parameter name="AttributeList"/>
+						</interactionClass>
+						<interactionClass name="EnableTimeRegulation">
+							<parameter name="FederationTime"/>
+							<parameter name="Lookahead"/>
+						</interactionClass>
+						<interactionClass name="DisableTimeRegulation"/>
+						<interactionClass name="EnableTimeConstrained"/>
+						<interactionClass name="DisableTimeConstrained"/>
+						<interactionClass name="EnableAsynchronousDelivery"/>
+						<interactionClass name="DisableAsynchronousDelivery"/>
+						<interactionClass name="ModifyLookahead">
+							<parameter name="Lookahead"/>
+						</interactionClass>
+						<interactionClass name="TimeAdvanceRequest">
+							<parameter name="FederationTime"/>
+						</interactionClass>
+						<interactionClass name="TimeAdvanceRequestAvailable">
+							<parameter name="FederationTime"/>
+						</interactionClass>
+						<interactionClass name="NextEventRequest">
+							<parameter name="FederationTime"/>
+						</interactionClass>
+						<interactionClass name="NextEventRequestAvailable">
+							<parameter name="FederationTime"/>
+						</interactionClass>
+						<interactionClass name="FlushQueueRequest">
+							<parameter name="FederationTime"/>
+						</interactionClass>
+					</interactionClass>
+				</interactionClass>
+			</interactionClass>
+		</interactionClass>
+	</interactions>
+	<time>
+		<timeStamp dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<lookahead dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+	</time>
+	<tags>
+		<updateReflectTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<sendReceiveTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<deleteRemoveTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<divestitureRequestTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<divestitureCompletionTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<acquisitionRequestTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<requestUpdateTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+	</tags>
+	<synchronizations>
+		<synchronization label="xxx" labelNotes="xxx" dataType="xxx" dataTypeNotes="xxx" capability="Achieve" capabilityNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+	</synchronizations>
+	<transportations>
+		<transportation name="xxx" nameNotes="xxx" description="xxx" descriptionNotes="xxx"/>
+	</transportations>
+	<switches autoProvide="Enabled" autoProvideNotes="xxx" conveyRegionDesignatorSets="Disabled" conveyRegionDesignatorSetsNotes="xxx" attributeScopeAdvisory="Disabled" attributeScopeAdvisoryNotes="xxx" attributeRelevanceAdvisory="Disabled" attributeRelevanceAdvisoryNotes="xxx" objectClassRelevanceAdvisory="Disabled" objectClassRelevanceAdvisoryNotes="xxx" interactionRelevanceAdvisory="Disabled" interactionRelevanceAdvisoryNotes="xxx" serviceReporting="Disabled" serviceReportingNotes="xxx"/>
+	<dataTypes>
+		<basicDataRepresentations>
+			<basicData name="xxx" nameNotes="xxx" size="xxx" sizeNotes="xxx" interpretation="xxx" interpretationNotes="xxx" endian="Big" endianNotes="xxx" encoding="xxx" encodingNotes="xxx"/>
+		</basicDataRepresentations>
+		<simpleDataTypes>
+			<simpleData name="xxx" nameNotes="xxx" representation="xxx" representationNotes="xxx" units="xxx" unitsNotes="xxx" resolution="xxx" resolutionNotes="xxx" accuracy="xxx" accuracyNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		</simpleDataTypes>
+		<enumeratedDataTypes>
+			<enumeratedData name="xxx" nameNotes="xxx" representation="xxx" representationNotes="xxx" semantics="xxx" semanticsNotes="xxx">
+				<enumerator name="xxx" nameNotes="xxx" values="xxx" valuesNotes="xxx"/>
+			</enumeratedData>
+		</enumeratedDataTypes>
+		<arrayDataTypes>
+			<arrayData name="xxx" nameNotes="xxx" dataType="xxx" dataTypeNotes="xxx" cardinality="xxx" cardinalityNotes="xxx" encoding="xxx" encodingNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		</arrayDataTypes>
+		<fixedRecordDataTypes>
+			<fixedRecordData name="xxx" nameNotes="xxx" encoding="xxx" encodingNotes="xxx" semantics="xxx" semanticsNotes="xxx">
+				<field name="xxx" nameNotes="xxx" dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+			</fixedRecordData>
+		</fixedRecordDataTypes>
+		<variantRecordDataTypes>
+			<variantRecordData name="xxx" nameNotes="xxx" discriminant="xxx" discriminantNotes="xxx" dataType="xxx" dataTypeNotes="xxx" encoding="xxx" encodingNotes="xxx" semantics="xxx" semanticsNotes="xxx">
+				<alternative enumerator="xxx" enumeratorNotes="xxx" name="xxx" nameNotes="xxx" dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+			</variantRecordData>
+		</variantRecordDataTypes>
+	</dataTypes>
+	<notes>
+		<note name="xxx" semantics="xxx" semanticsNotes="xxx"/>
+	</notes>
+</objectModel>

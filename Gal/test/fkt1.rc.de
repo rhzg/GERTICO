@@ -1,0 +1,17 @@
+version=1.0
+id=fkt1
+nrLogger=1
+id=lxy enable=1 level=D group=ff ctxt="L1.1"
+nrObserver=3
+id=intVal fmt=%d
+id=name fmt=%s
+id=longVal fmt=%lu
+nrFormat=2
+id=f1 ctxt="method" vtxt="intVal"
+id=f2 ctxt="method" vtxt="name longVal"
+nrEvent=3
+id=ex enable=1 level=W group=A6 idLogger=lx idFormat=f1 ctxtHead="FKT1" ctxt="E1.1"
+id=exy enable=1 level=I group=ff idLogger=lx idFormat=f2 ctxt="E1.2"
+id=exyz enable=1 level=I group=ff idLogger=lx idFormat=fx ctxt="E1.3"
+
+

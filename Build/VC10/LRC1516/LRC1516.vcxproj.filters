@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="HLAspec">
+      <UniqueIdentifier>{1f978e94-ef42-4d9a-85a1-5cc172cee1f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LRC">
+      <UniqueIdentifier>{1c17ffa0-260c-4580-a00a-ca1735a91965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{c3cfd2fa-ead5-422d-af2c-4495f694f10f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\LRC\HLA1516\EventHandler.cpp">
+      <Filter>HLAspec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\HLA1516\HlaOwnershipClientMapper.cpp">
+      <Filter>HLAspec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\HLA1516\Mapper1516.cpp">
+      <Filter>HLAspec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\HLA1516\ReceiverI.cpp">
+      <Filter>HLAspec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\HLA1516\RTIAmbassadorFactory.cpp">
+      <Filter>HLAspec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\HLA1516\RTIambServices.cpp">
+      <Filter>HLAspec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\DataDistributionManagementLRC.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\DeclarationManagementLRC.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\EventMarket.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\FederateDB.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\GeRtiAmbassadorI.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\GeRtiEventMarketI.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\GeRtiRestoreI.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\LrcOwnershipClient.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\ManagementObjectModelLRC1516.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\ObjectManagementLRC.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\OwnershipManagementLRC.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\Sender.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\SupportingServicesLRC.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\LRC\TimeManagementLRC.cpp">
+      <Filter>LRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\ClassDescr.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\ConvertTime.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\DataModel.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Exception.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Federate.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\GERTICOconfImpl.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\GeRtiFedTimeI.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\GeRtiOrb.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\HLAparseErrorHandler.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Item.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\JobHolder.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Mapper.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\NextHandle.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\OMT.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\PrintErrorHandler.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\PrintFilter.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Region.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\RegisteredObject.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\RunTimeObjectDB.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Space.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\Subscriber.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\LRC\HLA1516\EventHandler.h">
+      <Filter>HLAspec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\HLA1516\HlaOwnershipClientMapper.h">
+      <Filter>HLAspec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\HLA1516\Mapper1516.h">
+      <Filter>HLAspec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\HLA1516\ReceiverI.h">
+      <Filter>HLAspec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\HLA1516\RTIambServices.h">
+      <Filter>HLAspec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\config.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\DataDistributionManagementLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\DeclarationManagementLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\EventMarket.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\FederateDB.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\GeRtiAmbassadorI.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\GeRtiEventMarketI.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\GeRtiRestoreI.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\GeRtiSender.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\LrcOwnershipClient.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\LrcOwnershipClientMapper.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\ManagementObjectModelLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\MomLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\ObjectManagementLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\OwnershipManagementLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\OwnershipServiceClient.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\ReceiverLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\Sender.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\SupportingServicesLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\LRC\TimeManagementLRC.h">
+      <Filter>LRC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\ClassDescr.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\ConvertTime.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GERTICOconf.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GERTICOconfImpl.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\GeRtiTypes.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\HandleSet.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Item.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Util\Mapper.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

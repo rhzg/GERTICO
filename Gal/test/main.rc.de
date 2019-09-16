@@ -1,0 +1,19 @@
+version=1.0
+id=Client
+out=STDOUT
+nrLogger=1
+id=lx enable=1 level=D group=ff ctxt="L0.1"
+nrObserver=0
+nrFormat=1
+id=fx ctxt="method"
+nrAppender=1
+id=ba enable=1 level=D out=STDOUT name=ba size=100000 trigger=trigger
+nrLayout=1
+id=lay fmt="%TR %Lc %Ec %EP %Pp"
+nrConnectAppenderLayout=1
+idAppender=ba idLayout=lay
+nrConnectAppenderLoggerGlobal=1
+idAppender=ba idLogger=lx
+nrConnectAppenderLoggerLocal=2
+idAppender=ba idRepository=fkt1 idLogger=lxy
+idAppender=ba idRepository=fkt2 idLogger=lxy

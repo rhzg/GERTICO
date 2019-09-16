@@ -1,0 +1,12 @@
+cp RES/AnSynPtHandler.rconv RES/AnSynPtHandler.cpp
+cp RES/CoSynPtHandler.rconv RES/CoSynPtHandler.cpp
+cp RES/DiscoverHandler.rconv RES/DiscoverHandler.cpp
+cp RES/EventHandler.rconv RES/EventHandler.cpp 
+cp RES/FedSyncHandler.rconv RES/FedSyncHandler.cpp
+cp RES/InterPubOnHandler.rconv RES/InterPubOnHandler.cpp
+cp RES/ObjPubOnHandler.rconv RES/ObjPubOnHandler.cpp
+cp RES/ProvideHandler.rconv RES/ProvideHandler.cpp
+cp RES/RTIambServices.rconv RES/RTIambServices.cpp
+cp RES/RemoveHandler.rconv RES/RemoveHandler.cpp
+cp RES/RemoveWithTimeHandler.rconv RES/RemoveWithTimeHandler.cpp
+cp RES/StartRegHandler.rconv RES/StartRegHandler.cpp

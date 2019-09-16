@@ -1,0 +1,91 @@
+GERTICO Version $Name:  $
+
+GERTICO Version: gertico_0_56
+-----------------------------
+
+Changed:
+        bin/gerti to bin/gerti13
+
+Fixed memory leak in time management.
+
+LRC Library names changed:
+
+  Windows
+  
+    libRTI-NG.lib
+    libRTI-NGd.lib
+    
+  Linux
+    
+    libRTI-NG.a
+    libRTI-NG.so
+
+In GERTICOconf.xml can use macros in the form $(MACRO) for ModelPath.
+
+GERTICO Version: gertico_0_55
+-----------------------------
+
+Add some more locations to set a federate status as alive.
+
+Make ping a oneway call.
+
+GERTICO Version: gertico_0_54
+-----------------------------
+
+Bundle attributes when using supporting services rather than individual reads (advantage for WAN).
+
+Changed the names of the *.dll and *.lib files for the GERTICO 1.3 version: the root name is now libRTI-NG.
+
+Changed:
+
+        bin\GeRti.exe to bin\GeRti13.exe
+ and
+        bin\GeRtiD.exe to bin\GeRti13D.exe
+
+
+GERTICO Version: gertico_0_53
+-----------------------------
+
+Add some mutex locks for time management to prevent segmentation faults.
+
+
+GERTICO Version: gertico_0_52
+-----------------------------
+
+Added logical time interval, since logical time was previously incorrectly used for both logical time and logical time interval. This change also corrected a segmentation fault error in time management within the federate.
+
+
+GERTICO Version: gertico_0_51
+-----------------------------
+
+A problem with the calculation of grant time with zero-lookahead federates has been fixed.
+
+The complete use of SyncScope is now possible: use SYNC_WITH_TRANSPORT unless the network is especially bad use
+                                               SYNC_WITH_SERVER or SYNC_WITH_TARGET.
+
+
+GERTICO Version: gertico_0_50
+-----------------------------
+
+A WARNING using SyncScope in $GERTICO/GERTICOconf.xml - when SYNC_NONE is used, messages may be lost. In this Version, reliable and best_effort messages are treated equally - if reliable messages are lost SYNC_WITH_TARGET must be set. With SYNC_NONE performance is better, but with SYNC_WITH_TARGET the messages get delivered.
+
+
+
+GERTICO was optimized in a number of areas to increase the performance:
+
+The token-ring in Time-Management was removed. The response times for time advancing services have improved significantly - especially in WAN usage.
+
+Some services have been changed into local LRC calls (instead of remote calls to the GERTICO process):
+
+ 1) queryLogicalTime
+
+ 2) queryLookahead
+
+ 3) isAttributeOwnedByFederate
+
+
+
+
+Some areas where mutex locks caused dead locks have been changed.
+
+

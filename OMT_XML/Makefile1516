@@ -1,0 +1,43 @@
+# ----------------------------------------------------------------------------
+#
+# Copyright (c) Fraunhofer IITB
+# All rights reserved.
+#
+# ----------------------------------------------------------------------------
+
+include $(GERTICO)/config.incl
+
+INC = 	-I.  \
+	-I$(ACE_ROOT) \
+	-I$(TAO_ROOT) \
+	-I${XERCESCROOT}/include  \
+	-I$(GERTICO)
+
+LIB =	${XERCESCROOT}/lib/libxerces-c.so \
+	$(GERTICO)/lib/libTAO.so \
+	$(GERTICO)/lib/libTAO_CosNaming.so \
+	$(GERTICO)/lib/libTAO_PortableServer.so \
+	$(GERTICO)/lib/libACE.so \
+	${GERTICO}/Util/libgerti1516ut.a \
+	${GERTICO}/lib/librtiidl.a
+
+APP_NAME=HLAparse GERTICOparse
+
+.cpp.o:
+	$(CXX) $(FLAGS) -c $< $(INC)
+
+all: ${APP_NAME}
+
+HLAparse: HLAparse.o
+	$(CXX) $(LDFLAGS) HLAparse.o -o $@ $(LIB)
+
+GERTICOparse: GERTICOparse.o
+	$(CXX) $(LDFLAGS) GERTICOparse.o -o $@ $(LIB)
+
+clean:
+	rm -f ${APP_NAME} GERTICOparse.o HLAparse.o dependencies.incl
+
+dependencies.incl:
+	$(CXX) $(CLAGS) $(INC) -MM *.cpp >$@
+	 
+include dependencies.incl

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!-- edited with XML Spy v3.0.7 NT (http://www.xmlspy.com) by Reinhard Herzog (TES) -->
+<!DOCTYPE objectModel SYSTEM "HLA.dtd">
+<objectModel DTDversion="1516.2" name="Universe" nameNotes="xxx" type="FOM" typeNotes="xxx" version="1.0" versionNotes="xxx" date="xxx" dateNotes="xxx" purpose="R&amp;D Project: Standard Interface for Simulation Applications SISA" purposeNotes="xxx" appDomain="tutorial" appDomainNotes="xxx" sponsor="xxx" sponsorNotes="xxx" pocName="xxx" pocNameNotes="xxx" pocOrg="xxx" pocOrgNotes="xxx" pocPhone="xxx" pocPhoneNotes="xxx" pocEmail="xxx" pocEmailNotes="xxx" references="xxx" referencesNotes="xxx" other="xxx" otherNotes="xxx">
+
+ <objects>
+    <objectClass name="HLAobjectRoot">
+       <objectClass name="RTIprivate">
+ <objectClass name="Object">
+     <attribute name="Name"/>
+     <attribute name="Mass"/>
+     <attribute name="DRVectorSet"/>
+ <objectClass name="Star">
+ </objectClass>
+ <objectClass name="Planet">
+ </objectClass>
+ </objectClass>
+ <objectClass name="Manager">
+ <objectClass name="Federation">
+     <attribute name="FederationName"/>
+     <attribute name="FederatesInFederation"/>
+     <attribute name="RTIversion"/>
+     <attribute name="FEDid"/>
+     <attribute name="LastSaveName"/>
+     <attribute name="LastSaveTime"/>
+     <attribute name="NextSaveName"/>
+     <attribute name="NextSaveTime"/>
+ </objectClass>
+ <objectClass name="Federate">
+     <attribute name="FederateHandle"/>
+     <attribute name="FederateType"/>
+     <attribute name="FederateHost"/>
+     <attribute name="RTIversion"/>
+     <attribute name="FEDid"/>
+     <attribute name="TimeConstrained"/>
+     <attribute name="TimeRegulating"/>
+     <attribute name="AsynchronousDelivery"/>
+     <attribute name="FederateState"/>
+     <attribute name="TimeManagerState"/>
+     <attribute name="FederateTime"/>
+     <attribute name="Lookahead"/>
+     <attribute name="LBTS"/>
+     <attribute name="MinNextEventTime"/>
+     <attribute name="ROlength"/>
+     <attribute name="TSOlength"/>
+     <attribute name="ReflectionsReceived"/>
+     <attribute name="UpdatesSent"/>
+     <attribute name="InteractionsReceived"/>
+     <attribute name="InteractionsSent"/>
+     <attribute name="ObjectsOwned"/>
+     <attribute name="ObjectsUpdated"/>
+     <attribute name="ObjectsReflected"/>
+ </objectClass>
+ </objectClass>
+ </objectClass>
+    </objectClass>
+ </objects>
+
+  	<interactions>
+		<interactionClass name="HLAinteractionRoot">
+		</interactionClass>
+	</interactions>
+
+
+
+	<dimensions>
+		<dimension name="xxx" nameNotes="xxx" dataType="xxx" dataTypeNotes="xxx" upperBound="xxx" upperBoundNotes="xxx" normalization="xxx" normalizationNotes="xxx" value="xxx" valueNotes="xxx"/>
+	</dimensions>
+	<time>
+		<timeStamp dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<lookahead dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+	</time>
+	<tags>
+		<updateReflectTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<sendReceiveTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<deleteRemoveTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<divestitureRequestTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<divestitureCompletionTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<acquisitionRequestTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		<requestUpdateTag dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+	</tags>
+	<synchronizations>
+		<synchronization label="xxx" labelNotes="xxx" dataType="xxx" dataTypeNotes="xxx" capability="Achieve" capabilityNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+	</synchronizations>
+	<transportations>
+		<transportation name="xxx" nameNotes="xxx" description="xxx" descriptionNotes="xxx"/>
+	</transportations>
+	<switches autoProvide="Enabled" autoProvideNotes="xxx" conveyRegionDesignatorSets="Disabled" conveyRegionDesignatorSetsNotes="xxx" attributeScopeAdvisory="Disabled" attributeScopeAdvisoryNotes="xxx" attributeRelevanceAdvisory="Disabled" attributeRelevanceAdvisoryNotes="xxx" objectClassRelevanceAdvisory="Disabled" objectClassRelevanceAdvisoryNotes="xxx" interactionRelevanceAdvisory="Disabled" interactionRelevanceAdvisoryNotes="xxx" serviceReporting="Disabled" serviceReportingNotes="xxx"/>
+	<dataTypes>
+		<basicDataRepresentations>
+			<basicData name="xxx" nameNotes="xxx" size="xxx" sizeNotes="xxx" interpretation="xxx" interpretationNotes="xxx" endian="Big" endianNotes="xxx" encoding="xxx" encodingNotes="xxx"/>
+		</basicDataRepresentations>
+		<simpleDataTypes>
+			<simpleData name="xxx" nameNotes="xxx" representation="xxx" representationNotes="xxx" units="xxx" unitsNotes="xxx" resolution="xxx" resolutionNotes="xxx" accuracy="xxx" accuracyNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		</simpleDataTypes>
+		<enumeratedDataTypes>
+			<enumeratedData name="xxx" nameNotes="xxx" representation="xxx" representationNotes="xxx" semantics="xxx" semanticsNotes="xxx">
+				<enumerator name="xxx" nameNotes="xxx" values="xxx" valuesNotes="xxx"/>
+			</enumeratedData>
+		</enumeratedDataTypes>
+		<arrayDataTypes>
+			<arrayData name="xxx" nameNotes="xxx" dataType="xxx" dataTypeNotes="xxx" cardinality="xxx" cardinalityNotes="xxx" encoding="xxx" encodingNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+		</arrayDataTypes>
+		<fixedRecordDataTypes>
+			<fixedRecordData name="xxx" nameNotes="xxx" encoding="xxx" encodingNotes="xxx" semantics="xxx" semanticsNotes="xxx">
+				<field name="xxx" nameNotes="xxx" dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+			</fixedRecordData>
+		</fixedRecordDataTypes>
+		<variantRecordDataTypes>
+			<variantRecordData name="xxx" nameNotes="xxx" discriminant="xxx" discriminantNotes="xxx" dataType="xxx" dataTypeNotes="xxx" encoding="xxx" encodingNotes="xxx" semantics="xxx" semanticsNotes="xxx">
+				<alternative enumerator="xxx" enumeratorNotes="xxx" name="xxx" nameNotes="xxx" dataType="xxx" dataTypeNotes="xxx" semantics="xxx" semanticsNotes="xxx"/>
+			</variantRecordData>
+		</variantRecordDataTypes>
+	</dataTypes>
+	<notes>
+		<note name="xxx" semantics="xxx" semanticsNotes="xxx"/>
+	</notes>
+</objectModel>

@@ -1,0 +1,12 @@
+﻿Build started 05.11.2014 10:16:32.
+     1>Project "H:\Projects\Hla\Gertico\GERTICO_src_0_56_20\Build\VC10\idl\IDL.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching ".\Release\IDL.unsuccessfulbuild".
+       CustomBuild:
+         TAO IDL Compiler
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(151,5): error MSB6006: "cmd.exe" exited with code -1073741515.
+     1>Done Building Project "H:\Projects\Hla\Gertico\GERTICO_src_0_56_20\Build\VC10\idl\IDL.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.47

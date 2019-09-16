@@ -1,0 +1,127 @@
+1. Installation
+===============
+
+The binary distribution of GERTICO consists of a single archive. After
+extracting this archive you will see a directory which contains GERTICO and
+some third party libraries.
+
+Linux Installation
+------------------
+Unpack the compressed gertico file and copy its contents to any directory
+(e.g. /usr/local). Two environment variables are needed:
+
+	GERTICO has to point to the gertico directory (e.g. GERTICO=/usr/local/gertico)
+	
+	LD_LIBRARY_PATH has to point to the dynamic libraries of Gertico
+	(e.g. LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GERTICO/lib)
+
+
+Windows Installation
+--------------------
+Extract the archive to a directory of your choice (e.g. C:\programfiles).
+Before you can use GERTICO you must set the environment variable
+
+	GERTICO=C:\programfiles\gertico
+	
+and add directory %GERTICO%\bin to the search path so that GERTICO's
+executables and DLLs can be found by the operating system.
+
+Warning: Make sure that no other directory is in your search path which contains
+the ACE/TAO DLLs, e.g. DMSO RTI NG1.3! If a different version of ACE/TAO than
+the one required by GERTICO is used, library symbols cannot be resolved and
+your program will not start!
+
+Then you must adapt the configuration file "GERTICOconf.xml" to your
+configuration as described below.
+
+
+2. Configuration
+================
+
+Gertico is configured in the file GERTICOconf.xml which is in the gertico 
+directory. There are two entries which have to be adapted:
+
+The endpoint is the ip address and port of the machine where the Corba 
+NamingService is running (see chapter 3). 
+
+ 	<endPoint>corbaloc:iiop:192.168.240.107:3000</endPoint>
+ 
+On Windows you must use the fully qualified host name instead of the numeric ip
+address. If the hostname cannot be resolved add it to the "hosts" file in
+directory C:\winnt\system32\drivers\etc. If you don't need to run a federation
+execution on several computers, you can use "localhost" instead of a fully
+qualified host name and run the NamingService, GeRti and all federates on the
+same computer.
+	
+The ModelPath is the directory where your fed files are located.
+
+ <ModelPath>/home/user_1/FED</ModelPath>
+ 
+
+3. Starting Gertico
+===================
+
+First of all you have to start the Corba NamingService which is in the 
+gertico/bin directory:
+
+	Naming_Service -ORBEndpoint iiop://192.168.240.107:3000 -d
+	(-d is optional for verbose mode)
+	
+The parameter "-ORBEndpoint iiop://192.168.240.107:3000" is the ipaddress (with 
+defined port number) of the machine where the NamingService is running.
+	
+Then gertico has to be started:
+
+	> cd $GERTICO/bin
+	> gerti
+	Starting GERTICO server
+	Server is running
+	
+Please wait until the message "Server is running" appears.
+
+The Corba NamingService needs the complete hostname with its domainname of each 
+computer where a federate is running. So make sure that all ip addresses can be 
+resolved by a DNS server or an entry in /etc/hosts.
+
+
+4. Building applications
+========================
+
+The binary distribution contains a few example programs.
+
+Building applications on Linux
+------------------------------
+For building applications please have a look at the Makefile in 
+gertico/samples/helloworld. Applications have to be linked with following 
+libraries:
+
+RTI_INCD = $(GERTICO)/include
+
+RTI_LIBD = -L$(GERTICO)/lib
+
+RTI_LIBS = \
+   -lrtimap \
+   -lGeRTI_v1_0_CORBA \
+   -lgertitm \
+   -lgertimom \
+   -lgertiown \
+   -lOMT_XML \
+   -lgertiut \
+   -lrtiidl \
+   -lgal \
+   -lTAO \
+   -lACE \
+   -lTAO_CosNaming \
+   -lxerces-c \
+   -lFedtimeDouble \
+   -lRTI_Exceptions
+
+	 
+Building applications on Windows
+--------------------------------
+In order to build your own federates on Windows you need Visual C++ 6.0 with
+Service Pack 5 or higher. Code generation mus be set to "Multithreaded DLL
+debugging" and the Run-Time Type Identification (RTTI) must be enabled.
+
+The GERTICO header files are in %GERTICO%\include and libraries are in
+%GERTICO%\lib. Applications must be linked with LRCd.lib and FedTimeDoubleD.lib

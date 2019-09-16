@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Reinhard Herzog (Fraunhofer Institut IITB) -->
+<GERTICO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GERTICO.xsd">
+	<NamingService>
+		<endPoint>corbaloc:iiop:IMT523.pc.iitb.fhg.de:3000</endPoint>
+		<rootEntry>GeRTI</rootEntry>
+	</NamingService>
+  <Crash_ResignAction>cancelThenDeleteThenDivest</Crash_ResignAction>
+  <DataLength>1</DataLength>
+	<DTDfile>unused</DTDfile>
+	<LogicalTime1516>fedtime1516</LogicalTime1516>
+	<ModelPath>.;C:\GERTICO\OMT_XML\Samples</ModelPath>
+  <!--Here are the possible SyncScope values> -->
+  <!--SyncScope>SYNC_NONE</SyncScope> -->
+  <!--SyncScope>SYNC_WITH_TRANSPORT</SyncScope> -->
+  <!--SyncScope>SYNC_WITH_SERVER</SyncScope> -->
+  <!--SyncScope>SYNC_WITH_TARGET</SyncScope> -->
+  <SyncScope>SYNC_WITH_TRANSPORT</SyncScope>
+  <TransmissionWait_ms>10</TransmissionWait_ms>
+</GERTICO>

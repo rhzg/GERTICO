@@ -1,0 +1,3 @@
+cp ../../../gertimoni/src/api/cpp/GalConv/*.cpp ../GalConv
+cp ../../../gertimoni/src/api/cpp/GalConv/*.h ../GalConv
+

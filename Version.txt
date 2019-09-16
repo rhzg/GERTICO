@@ -1,0 +1,4 @@
+checkout 20100330
+copied to pc523
+changed timeManLRC to pointer
+to Ba as 52a 1.3

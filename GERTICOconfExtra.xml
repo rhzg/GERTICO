@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) Fraunhofer Institut IOSB -->
+<GERTICO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GERTICO.xsd">
+	<NamingService>
+		<endPoint>corbaloc:iiop:localhost:3000</endPoint>
+		<rootEntry>GeRTI</rootEntry>
+	</NamingService>
+  <Crash_ResignAction>cancelThenDeleteThenDivest</Crash_ResignAction>
+  <DataLength>1024</DataLength>
+	<DTDfile>unused</DTDfile>
+  <!--list of event hubs to use> -->
+  <EventHubs>
+    <EventHub>a</EventHub>
+  </EventHubs>
+  <!--event hub to be used by gerti - must be one from the list above> -->
+  <GerticoEventHub>a</GerticoEventHub>
+  <LogicalTime1516>fedtime1516</LogicalTime1516>
+	<ModelPath>.;$(GERTICO)\OMT_XML\Samples</ModelPath>
+  <!--Here are the possible SyncScope values> -->
+  <!--SyncScope>SYNC_NONE</SyncScope> -->
+  <!--SyncScope>SYNC_WITH_TRANSPORT</SyncScope> -->
+  <!--SyncScope>SYNC_WITH_SERVER</SyncScope> -->
+  <!--SyncScope>SYNC_WITH_TARGET</SyncScope> -->
+  <SyncScope>SYNC_WITH_TRANSPORT</SyncScope>
+  <TransmissionWait_ms>10</TransmissionWait_ms>
+</GERTICO>

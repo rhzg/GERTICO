@@ -1,0 +1,82 @@
+include $(GERTICO)/config.incl
+
+
+CXXFLAGS += \
+	$(FLAGS) -DIEEE_1516 \
+	-I$(GERTICO)/include/RTI_1516 \
+	-I$(ACE_ROOT) \
+	-I$(TAO_ROOT) \
+	-I$(TAO_ROOT)/orbsvcs \
+	-I$(TAO_ROOT)/orbsvcs/orbsvcs \
+	-I${XERCESCROOT}/include \
+	-I$(GERTICO)
+
+IDSTRING = $(shell fgrep ID_STRING config.h | sed 's/\#define ID_STRING "\(.*\)"/\1/')
+LIB = lib$(IDSTRING)1516.a
+
+
+SHARED_LIB = libGERTICO1516.so
+SHARED_LINK = g++
+SHARED_FLAGS = -Wl,-h -Wl,$(SHARED_LIB) -Wl,-E -Wl,-rpath,$(ACE_ROOT)/ace -shared -Wl,-rpath,$(GERTICO)/lib
+
+LIB_A = -lm -lpthread -lrt \
+	$(GERTICO)/lib/libTAO.so \
+	$(GERTICO)/lib/libACE.so \
+	$(GERTICO)/lib/libTAO_CosNaming.so \
+	$(XERCESCROOT)/lib/libxerces-c.so \
+	$(GERTICO)/FedTime/$(FEDTIMELIB) \
+	-Wl,-whole-archive $(GERTICO)/GeRtiTime/libgerti1516tm.a \
+	-Wl,-whole-archive $(GERTICO)/Util/libgerti1516ut.a \
+	-Wl,-whole-archive $(GERTICO)/idl/librtiidl.a \
+	-Wl,-whole-archive $(GERTICO)/LRC/HLA1516/librtimap1516.a \
+	-Wl,-whole-archive $(GERTICO)/RTI_Exceptions/libRTI_Exceptions.a \
+	-Wl,-whole-archive $(GERTICO)/Gal/libgal.a
+
+OBJ =	DeclarationManagementLRC.o \
+	DataDistributionManagementLRC.o \
+	EventMarket.o \
+	FederateDB.o \
+	GeRtiAmbassadorI.o \
+	GeRtiEventMarketI.o \
+	GeRtiRestoreI.o \
+	ManagementObjectModelLRC1516.o \
+	ObjectManagementLRC.o \
+	OwnershipManagementLRC.o \
+	Sender.o \
+	SupportingServicesLRC.o \
+	TimeManagementLRC.o \
+	LrcOwnershipClient.o
+
+all: sub $(LIB) $(SHARED_LIB) 
+
+install: $(GERTICO)/lib/$(LIB) $(GERTICO)/lib/$(SHARED_LIB)
+	(cd HLA1516; $(MAKE) install)
+
+$(GERTICO)/lib/$(LIB): $(LIB)
+	cp $(LIB) $(GERTICO)/lib
+
+$(GERTICO)/lib/$(SHARED_LIB): $(SHARED_LIB)
+	cp $(SHARED_LIB) $(GERTICO)/lib
+
+$(LIB): sub $(OBJ)
+	ar -r $@ $(OBJ)
+	
+$(SHARED_LIB): $(OBJ) $(GERTICO)/GeRtiTime/libgerti1516tm.a  \
+	$(GERTICO)/Util/libgerti1516ut.a $(GERTICO)/idl/librtiidl.a \
+	$(GERTICO)/LRC/HLA1516/librtimap1516.a $(GERTICO)/Gal/libgal.a
+	$(SHARED_LINK) $(SHARED_FLAGS) -o $@ $(OBJ)
+	
+clean:
+	rm -f $(OBJ) $(LIB) $(GERTICO)/lib/$(LIB) dependencies.incl $(SHARED_LIB)
+	(cd HLA1516; $(MAKE) clean)
+
+distclean: clean
+	rm -f $(LIB)
+
+sub:
+	(cd HLA1516; $(MAKE) all)
+
+dependencies.incl:
+	$(CXX) $(CXXFLAGS) -MM *.cpp >$@
+
+include dependencies.incl
